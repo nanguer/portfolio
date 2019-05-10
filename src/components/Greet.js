@@ -4,12 +4,13 @@ import { Tween } from 'react-gsap';
 class Greet extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			playState: 'pause'
+		};
 		this.handleClick = this.handleClick.bind(this);
 	}
 	tween;
-	state = {
-		playState: 'pause'
-	};
+
 	handleClick() {
 		const tween = this.tween.getGSAP();
 		tween.timeScale(0.5);

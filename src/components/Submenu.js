@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Submenu = () => {
 	return (
 		<div className="submenu">
-			<NavLink to="/" exact={true}>
+			<NavLink to="/" exact={true} className="submenu__home">
 				home
 			</NavLink>
 			<NavLink to="/about" exact={true}>

@@ -1,0 +1,22 @@
+.submenu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 80%;
+	transform: translate(-50%, -50%);
+}
+
+.submenu a {
+	margin: 0px 5px;
+}
+
+.submenu__home {
+	transition: all 0.2s ease-in-out;
+}
+.submenu__home:hover {
+	color: red;
+	font-size: 26px;
+}
