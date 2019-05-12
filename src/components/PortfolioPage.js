@@ -1,18 +1,60 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PortfolioItem from './PortfolioItem';
 
-export default () => (
-  <div>
-    this is portfolio component
-    <h4>Works:</h4>
-    <ul>
-      <li>YelpCamp</li>
-      <li>Time Destroyer</li>
-      <li>Personal Blog App</li>
-      <li>MovieApp</li>
-      <li>Indecision App</li>
-      <li>Expensify App</li>
-      <li>ZMP Group</li>
-      <li>This Website</li>
-    </ul>
-  </div>
-);
+export default class PortfolioPage extends Component {
+	state = {
+		works: [
+			{
+				id: 1,
+				title: 'YelpCamp',
+				description: '',
+				img: ''
+			},
+			{
+				id: 2,
+				title: 'Time Destroyer',
+				description: '',
+				img: ''
+			},
+			{
+				id: 3,
+				title: 'Personal Blog App',
+				description: '',
+				img: ''
+			},
+			{
+				id: 4,
+				title: 'Movie App',
+				description: '',
+				img: ''
+			},
+			{
+				id: 5,
+				title: 'Indecision App',
+				description: '',
+				img: ''
+			},
+			{
+				id: 6,
+				title: 'Expensify',
+				description: '',
+				img: ''
+			},
+			{
+				id: 7,
+				title: 'ZMP',
+				description: '',
+				img: ''
+			},
+			{
+				id: 8,
+				title: 'This Web',
+				description: '',
+				img: ''
+			}
+		]
+	};
+	render() {
+		return this.state.works.map(work => <PortfolioItem key={work.id} work={work} />);
+	}
+}
