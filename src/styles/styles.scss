@@ -2,3 +2,8 @@
 @import './background.scss';
 @import './components/greet.scss';
 @import './components/submenu.scss';
+
+@font-face {
+	font-family: "WorkSans";
+	src: url("/fonts/WorkSans.woff2") format("woff2");
+}
