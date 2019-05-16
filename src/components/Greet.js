@@ -23,14 +23,11 @@ class Greet extends React.Component {
 				<div>
 					<div className="main-title">
 						<h1>
-							Hi,
-							<br /> I'm
 							<span className="nahuel" onClick={this.handleClick}>
 								{' '}
-								Nahuel
+								NNG
 							</span>
 						</h1>
-						<h2>I'am a Web Developer</h2>
 					</div>
 				</div>
 			</Tween>

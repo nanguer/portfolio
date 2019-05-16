@@ -10,7 +10,7 @@ import '../styles/styles.scss';
 const AppRouter = () => (
 	<BrowserRouter>
 		<div>
-			<div className="stripes" />
+			{/* <div className="stripes" /> */}
 			<div className="wrapper">
 				<Switch>
 					<Route path="/" component={Greet} exact={true} />

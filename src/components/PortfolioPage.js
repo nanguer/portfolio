@@ -55,6 +55,6 @@ export default class PortfolioPage extends Component {
 		]
 	};
 	render() {
-		return this.state.works.map(work => <PortfolioItem key={work.id} work={work} />);
+		return <div>{this.state.works.map(work => <PortfolioItem key={work.id} work={work} />)}</div>;
 	}
 }
