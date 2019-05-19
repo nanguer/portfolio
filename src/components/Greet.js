@@ -20,15 +20,13 @@ class Greet extends React.Component {
 	render() {
 		return (
 			<Tween to={{ color: 'red' }} playState={this.state.playState} ref={ref => (this.tween = ref)}>
-				<div>
-					<div className="main-title">
-						<h1>
-							<span className="nahuel" onClick={this.handleClick}>
-								{' '}
-								NNG
-							</span>
-						</h1>
-					</div>
+				<div className="main-title">
+					<h1>
+						<span className="nahuel" onClick={this.handleClick}>
+							{' '}
+							NNG
+						</span>
+					</h1>
 				</div>
 			</Tween>
 		);

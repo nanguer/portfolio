@@ -7,54 +7,58 @@ export default class PortfolioPage extends Component {
 			{
 				id: 1,
 				title: 'YelpCamp',
-				description: '',
-				img: ''
+				description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ',
+				img: '/assets/Images/Yelpcamp.png'
 			},
 			{
 				id: 2,
 				title: 'Time Destroyer',
-				description: '',
-				img: ''
+				description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ',
+				img: '/assets/Images/Time_Destroyer.png'
 			},
 			{
 				id: 3,
 				title: 'Personal Blog App',
-				description: '',
-				img: ''
+				description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ',
+				img: '/assets/Images/BlogApp.png'
 			},
 			{
 				id: 4,
 				title: 'Movie App',
-				description: '',
-				img: ''
+				description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ',
+				img: '/assets/Images/movieApp.png'
 			},
 			{
 				id: 5,
 				title: 'Indecision App',
-				description: '',
+				description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ',
 				img: ''
 			},
 			{
 				id: 6,
 				title: 'Expensify',
-				description: '',
+				description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ',
 				img: ''
 			},
 			{
 				id: 7,
 				title: 'ZMP',
-				description: '',
+				description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. ',
 				img: ''
 			},
 			{
 				id: 8,
 				title: 'This Web',
-				description: '',
+				description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
 				img: ''
 			}
 		]
 	};
 	render() {
-		return <div>{this.state.works.map(work => <PortfolioItem key={work.id} work={work} />)}</div>;
+		return (
+			<div className="portfolio-list">
+				{this.state.works.map(work => <PortfolioItem key={work.id} work={work} />)}
+			</div>
+		);
 	}
 }
