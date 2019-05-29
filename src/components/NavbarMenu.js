@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 // const Submenu = () => {
 // 	return (
@@ -22,16 +22,14 @@ import { NavLink } from 'react-router-dom';
 
 import {
 	Collapse,
+	Col,
+	Container,
 	Navbar,
 	NavbarToggler,
-	NavLink as NavLinkBS,
 	Nav,
 	NavItem,
-	UncontrolledDropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem
-} from 'reactstrap';
+	Row
+} from "reactstrap";
 
 export default class NavbarMenu extends React.Component {
 	constructor(props) {
@@ -50,52 +48,47 @@ export default class NavbarMenu extends React.Component {
 	render() {
 		return (
 			<div>
+				<Container>
 				<Navbar color="light" light expand="md">
-					<NavbarToggler onClick={this.toggle} />
-					<Collapse isOpen={this.state.isOpen} navbar>
-						<Nav className="ml-auto" navbar>
-							<NavItem>
-								<NavLinkBS>
-									<NavLink to="/" exact={true}>
-										home
-									</NavLink>
-								</NavLinkBS>
-							</NavItem>
-							<NavItem>
-								<NavLinkBS>
-									<NavLink to="/about" exact={true}>
-										about
-									</NavLink>
-								</NavLinkBS>
-							</NavItem>
-							<NavItem>
-								<NavLinkBS>
-									<NavLink to="/portfolio" exact={true}>
-										portfolio
-									</NavLink>
-								</NavLinkBS>
-							</NavItem>
-							<NavItem>
-								<NavLinkBS>
-									<NavLink to="/contact" exact={true}>
-										contact
-									</NavLink>
-								</NavLinkBS>
-							</NavItem>
-							<UncontrolledDropdown nav inNavbar>
-								<DropdownToggle nav caret>
-									Options
-								</DropdownToggle>
-								<DropdownMenu right>
-									<DropdownItem>Option 1</DropdownItem>
-									<DropdownItem>Option 2</DropdownItem>
-									<DropdownItem divider />
-									<DropdownItem>Reset</DropdownItem>
-								</DropdownMenu>
-							</UncontrolledDropdown>
-						</Nav>
-					</Collapse>
+						
+							<NavbarToggler onClick={this.toggle} />
+						<Collapse isOpen={this.state.isOpen} navbar>
+							<Row>
+								<Col
+									xs="auto"
+									sm="12"
+									md={{ size: 6, offset: 3 }}
+								>
+									<Nav className="ml-auto" navbar>
+										<NavItem>
+											<NavLink to="/" exact={true}>
+												home
+											</NavLink>
+										</NavItem>
+										<NavItem>
+											<NavLink to="/about" exact={true}>
+												about
+											</NavLink>
+										</NavItem>
+										<NavItem>
+											<NavLink
+												to="/portfolio"
+												exact={true}
+											>
+												portfolio
+											</NavLink>
+										</NavItem>
+										<NavItem>
+											<NavLink to="/contact" exact={true}>
+												contact
+											</NavLink>
+										</NavItem>
+									</Nav>
+								</Col>
+							</Row>
+							</Collapse>					
 				</Navbar>
+				</Container>
 			</div>
 		);
 	}
