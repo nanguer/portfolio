@@ -56,7 +56,7 @@ export default class PortfolioPage extends Component {
 	};
 	render() {
 		return (
-			<div className="portfolio-list">
+			<div className="portfolio-list d-flex flex-wrap justify-content-around lign-items-start">
 				{this.state.works.map(work => <PortfolioItem key={work.id} work={work} />)}
 			</div>
 		);

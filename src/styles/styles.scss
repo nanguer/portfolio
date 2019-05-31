@@ -1,16 +1,18 @@
-// @import './base';
+ @import './base';
 // @import './background.scss';
+@import './components/navbarmenu.scss';
 // @import './components/greet.scss';
 // @import './components/submenu.scss';
 // @import './components/portfoliopage.scss';
-// @import './components/portfolioitem.scss';
+@import './components/portfolioitem.scss';
 
-$theme-colors: ("primary": #fde400, "danger": #ff4136);
-$body-bg: rgb(53, 53, 53);
+
+
 
 @font-face {
 	font-family: "WorkSans";
 	src: url("/assets/fonts/WorkSans.woff2") format("woff2");
 }
+
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

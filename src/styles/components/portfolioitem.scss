@@ -1,3 +1,7 @@
+@import '../settings.scss';
+
 .portfolio-item {
-	width: 24vw;
+	max-width: min-content;
+	min-width: 16vw;
+	margin: $margin;
 }

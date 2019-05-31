@@ -22,13 +22,13 @@ import { NavLink } from "react-router-dom";
 
 import {
 	Collapse,
-	Col,
+	//Col,
 	Container,
 	Navbar,
 	NavbarToggler,
 	Nav,
-	NavItem,
-	Row
+	NavItem
+	//Row
 } from "reactstrap";
 
 export default class NavbarMenu extends React.Component {
@@ -48,47 +48,37 @@ export default class NavbarMenu extends React.Component {
 	render() {
 		return (
 			<div>
-				<Container>
 				<Navbar color="light" light expand="md">
-						
-							<NavbarToggler onClick={this.toggle} />
+					<Container>
+						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
-							<Row>
-								<Col
-									xs="auto"
-									sm="12"
-									md={{ size: 6, offset: 3 }}
-								>
-									<Nav className="ml-auto" navbar>
-										<NavItem>
-											<NavLink to="/" exact={true}>
-												home
-											</NavLink>
-										</NavItem>
-										<NavItem>
-											<NavLink to="/about" exact={true}>
-												about
-											</NavLink>
-										</NavItem>
-										<NavItem>
-											<NavLink
-												to="/portfolio"
-												exact={true}
-											>
-												portfolio
-											</NavLink>
-										</NavItem>
-										<NavItem>
-											<NavLink to="/contact" exact={true}>
-												contact
-											</NavLink>
-										</NavItem>
-									</Nav>
-								</Col>
-							</Row>
-							</Collapse>					
+							<Container className="d-flex justify-content-around">
+							<Nav navbar >
+								<NavItem>
+									<NavLink className="navbar-navlink" to="/" exact={true}>
+										home
+									</NavLink>
+								</NavItem>
+								<NavItem>
+									<NavLink className="navbar-navlink" to="/about" exact={true}>
+										about
+									</NavLink>
+								</NavItem>
+								<NavItem>
+									<NavLink className="navbar-navlink" to="/portfolio" exact={true}>
+										portfolio
+									</NavLink>
+								</NavItem>
+								<NavItem>
+									<NavLink className="navbar-navlink" to="/contact" exact={true}>
+										contact
+									</NavLink>
+								</NavItem>
+							</Nav>
+							</Container>
+						</Collapse>
+					</Container>
 				</Navbar>
-				</Container>
 			</div>
 		);
 	}

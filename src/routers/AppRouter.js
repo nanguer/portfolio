@@ -4,7 +4,7 @@ import AboutMePage from "../components/AboutMePage";
 import PortfolioPage from "../components/PortfolioPage";
 import ContactPage from "../components/ContactPage";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Container, Button, Col, Row } from "reactstrap";
+import { Container, Button} from "reactstrap";
 import NavbarMenu from "../components/NavbarMenu";
 import "../styles/styles.scss";
 
@@ -12,14 +12,10 @@ const AppRouter = () => (
 	<BrowserRouter>
 		<Container>
 			{/* <div className="stripes" /> */}
-			<Container>
-				<Row>
-					<Col sm="12" md={{ size: 6, offset: 3 }}>
+			
 						<NavbarMenu />
-					</Col>
-				</Row>
-			</Container>
-			<div className="wrapper">
+					
+			<div className="wrapper d-flex justify-content-center align-items-center flex-column">
 				<Switch>
 					<Route path="/" component={Greet} exact={true} />
 					<Route path="/about" component={AboutMePage} exact={true} />

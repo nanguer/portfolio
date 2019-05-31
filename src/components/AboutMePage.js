@@ -6,8 +6,10 @@ const AboutMePage = () => {
       <p>
         I'm a poland-based Web Developer and IT and Telecommunications
         Technician, with strong interest for web development and
-        networking.Always passionate to learn, and keep up-to-date with new
-        technologies!
+        networking.
+        I've been in the IT Service industry for more than 6 years, where I learned to participate and deliver in projects following the ITIL framework for quality management. 
+        Nowadays I spend most of my free time learning web technologies, aiming to participate in creative projects that can affect people in positive ways.
+        
       </p>
     </div>
   );

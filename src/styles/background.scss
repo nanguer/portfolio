@@ -1,25 +1,15 @@
-.stripes {
-	background-image: repeating-linear-gradient(to right, transparent, transparent 218px, grey 2px, grey 219px);
-	display: block;
-	position: fixed;
-	height: 105vh;
-	width: 400vw;
-	background-color: transparent;
-	opacity: 0.14;
-	z-index: -1;
-	overflow: hidden;
-	left: -300vw;
-}
+//@import './settings.scss';
+// .stripes {
+// 	background-image: repeating-linear-gradient(to right, transparent, transparent 218px, grey 2px, grey 219px);
+// 	display: block;
+// 	position: fixed;
+// 	height: 105vh;
+// 	width: 400vw;
+// 	background-color: transparent;
+// 	opacity: 0.14;
+// 	z-index: -1;
+// 	overflow: hidden;
+// 	left: -300vw;
+// }
 
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: absolute;
-	width: 100vw;
-	height: 100vh;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	overflow: hidden;
-}
+
