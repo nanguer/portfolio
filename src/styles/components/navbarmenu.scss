@@ -1,5 +1,9 @@
 @import '../settings.scss';
 
-.navbar-navlink{
-    margin: $margin;
+.navbar-navlink {
+	margin: $margin;
+}
+
+.navbar-navlink:hover {
+	text-decoration: none;
 }

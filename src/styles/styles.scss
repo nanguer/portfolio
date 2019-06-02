@@ -1,4 +1,5 @@
- @import './base';
+@import './settings.scss';
+@import './base';
 // @import './background.scss';
 @import './components/navbarmenu.scss';
 // @import './components/greet.scss';
@@ -6,13 +7,14 @@
 // @import './components/portfoliopage.scss';
 @import './components/portfolioitem.scss';
 
-
-
-
 @font-face {
 	font-family: "WorkSans";
 	src: url("/assets/fonts/WorkSans.woff2") format("woff2");
 }
 
+// CUSTOM SCSS
+$font-family-sans-serif: "Worksans";
+$body-bg: $bg-color;
+$body-color: $main-font-color;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
