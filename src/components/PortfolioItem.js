@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from "react";
 
-export class PortfolioItem extends Component {
-	render() {
-		return (
-			<div className="portfolio-item d-flex align-items-start flex-column">
-				<h2>{this.props.work.title}</h2>
-				<img src={this.props.work.img} alt="" />
-				<p>{this.props.work.description}</p>
-			</div>
-		);
-	}
-}
+const PortfolioItem = ({ work, ...props }) => {
+  const { title, img, description } = work;
+  return (
+    <div className="portfolio-item d-flex align-items-start flex-column">
+      <h2>{title}</h2>
+      <img src={img} alt="" />
+      <p>{description}</p>
+    </div>
+  );
+};
 
 export default PortfolioItem;
