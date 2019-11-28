@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Tween } from "react-gsap";
 
 const Landing = () => {
@@ -6,11 +6,13 @@ const Landing = () => {
     playState: "pause"
   });
 
-  let tween;
+  let tween = useRef(null);
+
+  useEffect(() => {
+    console.log(tween);
+  }, []);
 
   const handleClick = () => {
-    const tween = tween.getGSAP();
-    tween.timeScale(0.5);
     setState({ playState: "play" });
   };
 
