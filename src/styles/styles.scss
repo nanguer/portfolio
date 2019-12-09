@@ -1,15 +1,16 @@
-@import './settings.scss';
-@import './base';
-// @import './background.scss';
-@import './components/navbarmenu.scss';
-// @import './components/greet.scss';
-// @import './components/submenu.scss';
-// @import './components/portfoliopage.scss';
-@import './components/portfolioitem.scss';
+@import "./settings";
+@import "./base";
+@import "./background";
+@import "./components/navbarmenu";
+@import "./components/landing";
+// @import './components/submenu';
+// @import './components/portfoliopage';
+@import "./components/portfolioitem";
+@import "./components/footer";
 
 @font-face {
-	font-family: "WorkSans";
-	src: url("/assets/fonts/WorkSans.woff2") format("woff2");
+  font-family: "WorkSans";
+  src: url("/assets/fonts/WorkSans.woff2") format("woff2");
 }
 
 // CUSTOM SCSS

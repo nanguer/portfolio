@@ -10,21 +10,18 @@ import "../styles/styles.scss";
 
 const AppRouter = () => (
   <BrowserRouter>
-    <Container>
-      {/* <div className="stripes" /> */}
+    {/* <div className="stripes" /> */}
 
-      <NavbarMenu />
+    <NavbarMenu />
 
-      <div className="wrapper d-flex justify-content-center align-items-center flex-column">
-        <Switch>
-          <Route path="/" component={Landing} exact={true} />
-          <Route path="/about" component={AboutMePage} exact={true} />
-          <Route path="/portfolio" component={PortfolioPage} exact={true} />
-          <Route path="/contact" component={ContactPage} exact={true} />
-        </Switch>
-        <Button color="primary">Button</Button>
-      </div>
-    </Container>
+    <div className="stripes"></div>
+    <Switch>
+      <Route path="/" component={Landing} exact={true} />
+      <Route path="/about" component={AboutMePage} exact={true} />
+      <Route path="/portfolio" component={PortfolioPage} exact={true} />
+      <Route path="/contact" component={ContactPage} exact={true} />
+    </Switch>
+    {/* <Button color="primary">Button</Button> */}
   </BrowserRouter>
 );
 

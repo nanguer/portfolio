@@ -1,0 +1,25 @@
+@import "./settings.scss";
+
+body {
+  font-size: 20px;
+  color: $main-font-color;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+h1 {
+  font-weight: 700;
+  color: $highlight-font-color;
+}
+
+li {
+  list-style-type: none;
+}
+
+.wrapper {
+  height: $viewport-height;
+}
+
+ul {
+  padding: 0px;
+}

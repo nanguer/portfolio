@@ -1,0 +1,11 @@
+@import "../settings.scss";
+
+.footer__contact {
+  color: $grey;
+}
+
+@media (min-width: 992px) {
+  .footer__introduce {
+    margin-left: 7rem;
+  }
+}

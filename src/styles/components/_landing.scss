@@ -1,0 +1,44 @@
+@import "../settings.scss";
+
+.main-title {
+  font-size: 40px;
+  width: max-content;
+}
+
+.greet {
+  z-index: 2;
+}
+
+.dot {
+  color: $purple;
+}
+
+@mixin meBg {
+  display: flex;
+  background-image: url("../assets/me-bg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+%meBg-styles {
+  @include meBg();
+}
+
+.meBg {
+  @extend %meBg-styles;
+  position: absolute;
+  height: 64vh;
+  width: 72vw;
+  top: 14vh;
+}
+
+@media (min-width: 992px) {
+  .meBg {
+    @include meBg();
+    position: relative;
+    height: 65vh;
+    width: 91vw;
+    top: 7vh;
+  }
+}
