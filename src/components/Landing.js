@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Tween } from "react-gsap";
 import bgImg from "../assets/me-bg.jpg";
 import { Footer } from "./Footer";
+import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 const Landing = () => {
   const [state, setState] = useState({
@@ -15,11 +16,14 @@ const Landing = () => {
   const handleClick = () => {
     setState({ playState: "play" });
   };
+  const iconStyle = {
+    margin: "7px 0px"
+  };
 
   return (
     <div className="wrapper d-flex flex-column justify-content-between">
       <div
-        className="container d-flex flex-row justify-content-center"
+        className="container-fluid d-flex flex-row"
         style={{ height: "-webkit-fill-available" }}
       >
         <Tween
@@ -51,6 +55,21 @@ const Landing = () => {
           </div>
         </div>
         <div className="meBg"></div>
+        <div className="social-media flex-column align-self-center align-items-center justify-content-between">
+          <div className="follow text-nowrap">Follow Me</div>
+          <svg
+            className="singleLine"
+            viewBox="0 0 80 20"
+            style={{ height: "1rem", display: "flex", stroke: "white" }}
+          >
+            <path d="M 0,10 L 80, 10" />
+          </svg>
+          <div className="icons-sm d-flex flex-column">
+            <FaInstagram size="1.5em" style={iconStyle} />
+            <FaLinkedinIn size="1.5em" style={iconStyle} />
+            <FaGithub size="1.5em" style={iconStyle} />
+          </div>
+        </div>
       </div>
       <Footer />
     </div>

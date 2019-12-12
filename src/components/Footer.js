@@ -9,7 +9,7 @@ export const Footer = () => {
       <div className="order-1 order-md-1 order-lg-0 justify-content-start footer__contact">
         <ul>
           <li>E: nahuelgimenez@gmail.com</li>
-          <li>T: (+48) 798397113</li>
+          <li>T: (+48) 789397113</li>
         </ul>
       </div>
       <div

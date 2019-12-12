@@ -13,6 +13,23 @@
   color: $purple;
 }
 
+.social-media {
+  display: none;
+  flex: none;
+  height: 37%;
+}
+
+@media (min-width: 576px) {
+  .social-media {
+    display: flex;
+  }
+}
+
+div.social-media > div.follow,
+div.social-media > svg.singleLine {
+  transform: rotate(90deg);
+}
+
 @mixin meBg {
   display: flex;
   background-image: url("../assets/me-bg.jpg");
