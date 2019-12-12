@@ -1,11 +1,14 @@
 @import "../settings.scss";
 
 .footer__contact {
+  display: none;
   color: $grey;
 }
 
-@media (min-width: 992px) {
-  .footer__introduce {
-    margin-left: 7rem;
+@media (min-width: 576px) {
+  .footer__contact {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
   }
 }

@@ -55,19 +55,23 @@ const Landing = () => {
           </div>
         </div>
         <div className="meBg"></div>
-        <div className="social-media flex-column align-self-center align-items-center justify-content-between">
-          <div className="follow text-nowrap">Follow Me</div>
-          <svg
-            className="singleLine"
-            viewBox="0 0 80 20"
-            style={{ height: "1rem", display: "flex", stroke: "white" }}
-          >
-            <path d="M 0,10 L 80, 10" />
-          </svg>
-          <div className="icons-sm d-flex flex-column">
-            <FaInstagram size="1.5em" style={iconStyle} />
-            <FaLinkedinIn size="1.5em" style={iconStyle} />
-            <FaGithub size="1.5em" style={iconStyle} />
+        <div className="social-media flex-column justify-content-end h-100">
+          <div className="d-flex align-items-center flex-column justify-content-end">
+            <div className="follow text-nowrap mb-sm-4">Follow Me</div>
+            <div className="singleLine mt-sm-5">
+              <svg
+                viewBox="0 0 80 20"
+                style={{ height: "1rem", display: "flex", stroke: "white" }}
+              >
+                <path d="M 0,10 L 80, 10" />
+              </svg>
+            </div>
+
+            <div className="icons-sm d-flex flex-column mt-sm-5 mb-sm-5">
+              <FaInstagram size="1.5em" style={iconStyle} />
+              <FaLinkedinIn size="1.5em" style={iconStyle} />
+              <FaGithub size="1.5em" style={iconStyle} />
+            </div>
           </div>
         </div>
       </div>
