@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Tween } from "react-gsap";
-import bgImg from "../assets/me-bg.jpg";
+import { gsap } from "gsap";
 import { Footer } from "./Footer";
 import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
@@ -9,9 +8,19 @@ const Landing = () => {
     playState: "pause"
   });
 
-  let tween = useRef(null);
+  let line1 = useRef(null);
+  let line2 = useRef(null);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    gsap.from([line1, line2], 0.8, {
+      delay: 0.8,
+      ease: "power3.out",
+      y: 64,
+      stagger: {
+        amount: 0.15
+      }
+    });
+  }, [line1, line2]);
 
   const handleClick = () => {
     setState({ playState: "play" });
@@ -26,30 +35,15 @@ const Landing = () => {
         className="container-fluid d-flex flex-row"
         style={{ height: "-webkit-fill-available" }}
       >
-        <Tween
-          to={{ color: "red" }}
-          playState={state.playState}
-          ref={ref => (tween = ref)}
-        >
-          {/* <div className="main-title">
-          <h1>
-            <span className="nahuel" onClick={handleClick}>
-              {" "}
-              NNG
-            </span>
-          </h1>
-        </div> */}
-        </Tween>
-
         <div className="container greet" style={{ alignSelf: "center" }}>
           <div className="d-flex flex-column">
-            <div>
+            <div ref={el => (line1 = el)}>
               {" "}
               <h1 style={{ fontSize: "4.5rem" }}>
                 I build beautiful<span className="dot"> web apps</span>
               </h1>
             </div>
-            <div className="subtitle">
+            <div className="subtitle" ref={el => (line2 = el)}>
               <h2>I'm a tech passionate human.</h2>
             </div>
           </div>
