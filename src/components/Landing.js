@@ -15,9 +15,9 @@ const Landing = () => {
     gsap.from([line1, line2], 0.8, {
       delay: 0.8,
       ease: "power3.out",
-      y: 64,
+      y: 100,
       stagger: {
-        amount: 0.15
+        amount: 0.3
       }
     });
   }, [line1, line2]);
@@ -48,7 +48,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-        <div className="meBg"></div>
+        <div className="meBg" />
         <div className="social-media flex-column justify-content-end h-100">
           <div className="d-flex align-items-center flex-column justify-content-end">
             <div className="follow text-nowrap mb-sm-4">Follow Me</div>

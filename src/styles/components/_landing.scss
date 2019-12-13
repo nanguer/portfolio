@@ -35,7 +35,7 @@
   transition: opacity 400ms;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 576px) and (min-height: 425px) {
   .social-media {
     display: flex;
   }
