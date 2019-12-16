@@ -20,9 +20,16 @@ const NavbarMenu = () => {
     });
   };
 
+  const closeNavBar = () => {
+    if (state.isOpen) {
+      return toggle();
+    }
+    return;
+  };
+
   return (
     <div>
-      <Navbar dark expand="md" style={{ zIndex: "1" }}>
+      <Navbar dark expand="md" style={{ zIndex: "2" }}>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={state.isOpen} navbar>
           <Container className="name justify-content-start">
@@ -39,12 +46,18 @@ const NavbarMenu = () => {
                   to="/"
                   exact={true}
                   activeClassName="active"
+                  onClick={closeNavBar}
                 >
                   home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="navbar-navlink" to="/about" exact={true}>
+                <NavLink
+                  className="navbar-navlink"
+                  to="/about"
+                  onClick={closeNavBar}
+                  exact={true}
+                >
                   about
                 </NavLink>
               </NavItem>
@@ -53,12 +66,18 @@ const NavbarMenu = () => {
                   className="navbar-navlink"
                   to="/portfolio"
                   exact={true}
+                  onClick={closeNavBar}
                 >
-                  portfolio
+                  works
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="navbar-navlink" to="/contact" exact={true}>
+                <NavLink
+                  className="navbar-navlink"
+                  to="/contact"
+                  onClick={closeNavBar}
+                  exact={true}
+                >
                   contact
                 </NavLink>
               </NavItem>

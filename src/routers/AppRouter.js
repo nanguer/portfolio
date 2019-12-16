@@ -8,6 +8,7 @@ import { CSSTransition } from "react-transition-group";
 import { gsap } from "gsap";
 import NavbarMenu from "../components/NavbarMenu";
 import "../styles/styles.scss";
+import AbsoluteWrapper from "../components/AbsoluteWrapper";
 
 const routes = [
   { path: "/", name: "Landing", Component: Landing },
@@ -18,7 +19,7 @@ const routes = [
 
 const AppRouter = () => {
   const onEnter = node => {
-    // console.log(node);
+    console.log(node);
   };
 
   const onExit = node => {
@@ -33,18 +34,20 @@ const AppRouter = () => {
       {routes.map(({ path, Component, name }) => (
         <Route key={name} path={path} exact>
           {({ match }) => (
-            <CSSTransition
-              in={match != null}
-              timeout={1200}
-              classNames="page"
-              unmountOnExit
-              onExit={onExit}
-              onEnter={onEnter}
-            >
-              <div className="page">
-                <Component />
-              </div>
-            </CSSTransition>
+            <AbsoluteWrapper>
+              <CSSTransition
+                in={match != null}
+                timeout={1200}
+                classNames="page"
+                unmountOnExit
+                onExit={onExit}
+                onEnter={onEnter}
+              >
+                <div className="page">
+                  <Component />
+                </div>
+              </CSSTransition>
+            </AbsoluteWrapper>
           )}
         </Route>
       ))}

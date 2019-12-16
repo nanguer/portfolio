@@ -12,12 +12,13 @@ const Landing = () => {
   let line2 = useRef(null);
 
   useEffect(() => {
-    gsap.from([line1, line2], 0.8, {
+    gsap.from([line1, line2], 0.6, {
+      opacity: 0,
       delay: 0.8,
       ease: "power3.out",
-      y: 100,
+      y: 25,
       stagger: {
-        amount: 0.3
+        amount: 0.15
       }
     });
   }, [line1, line2]);
@@ -37,14 +38,14 @@ const Landing = () => {
       >
         <div className="container greet" style={{ alignSelf: "center" }}>
           <div className="d-flex flex-column">
-            <div ref={el => (line1 = el)}>
+            <div>
               {" "}
-              <h1 style={{ fontSize: "4.5rem" }}>
+              <h1 style={{ fontSize: "4.5rem" }} ref={el => (line1 = el)}>
                 I build beautiful<span className="dot"> web apps</span>
               </h1>
             </div>
-            <div className="subtitle" ref={el => (line2 = el)}>
-              <h2>I'm a tech passionate human.</h2>
+            <div className="subtitle">
+              <h2 ref={el => (line2 = el)}>I'm a tech passionate human.</h2>
             </div>
           </div>
         </div>

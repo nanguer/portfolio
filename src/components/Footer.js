@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <div
       className="d-flex flex-row flex-wrap justify-content-center justify-content-md-between"
-      style={{ margin: "0 1rem" }}
+      style={{ margin: "0 1rem 1rem" }}
     >
       <div className="order-1 order-md-1 order-lg-0 justify-content-start footer__contact">
         <div>E: nahuelgimenez@gmail.com</div>
