@@ -10,18 +10,28 @@ const Landing = () => {
 
   let line1 = useRef(null);
   let line2 = useRef(null);
+  let picture = useRef(null);
 
   useEffect(() => {
     gsap.from([line1, line2], 0.6, {
       opacity: 0,
-      delay: 0.8,
+      delay: 0.4,
       ease: "power3.out",
-      y: 25,
+      y: 45,
       stagger: {
-        amount: 0.15
+        ease: "power3.out",
+        amount: 0.8
       }
     });
   }, [line1, line2]);
+
+  useEffect(() => {
+    gsap.to(picture, 1, {
+      opacity: 1,
+      delay: 1.2,
+      ease: "power3.out"
+    });
+  }, [picture]);
 
   const handleClick = () => {
     setState({ playState: "play" });
@@ -49,7 +59,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-        <div className="meBg" />
+        <div className="meBg" ref={el => (picture = el)} />
         <div className="social-media flex-column justify-content-end h-100">
           <div className="d-flex align-items-center flex-column justify-content-end">
             <div className="follow text-nowrap mb-sm-4">Follow Me</div>

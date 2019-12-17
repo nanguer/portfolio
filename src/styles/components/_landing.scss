@@ -48,6 +48,7 @@ div.singleLine {
 
 @mixin meBg {
   display: flex;
+  opacity: 0;
   background-image: url("../assets/me-bg.jpg");
   background-size: contain;
   background-repeat: no-repeat;
