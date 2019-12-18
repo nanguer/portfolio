@@ -7,8 +7,23 @@ const AboutMePage = () => {
   const iconStyle = {
     margin: "0px 7px"
   };
+  const iconStyleReact = {
+    margin: "0px 7px 0px 0px"
+  };
+  const techIcons = [
+    { IconComponent: FaReact, name: "react" },
+    { IconComponent: ReduxIcon, name: "redux" },
+    { IconComponent: FaNode, name: "node" },
+    { IconComponent: DiMongodb, name: "mongo" },
+    { IconComponent: FaHtml5, name: "html" },
+    { IconComponent: FaSass, name: "sass" },
+    { IconComponent: FaCss3, name: "css" }
+  ];
   return (
-    <div className="container mt-5">
+    <div
+      className="container
+     h-100 d-flex flex-column justify-content-around"
+    >
       <p>
         I'm a poland-based Web Developer and IT and Telecommunications
         Technician, with strong interest for web development and networking,
@@ -24,16 +39,18 @@ const AboutMePage = () => {
         technologies and frameworks, aiming to participate in creative projects
         that can affect people in positive ways.
       </p>
-      <div className="tech-stack">
-        <h3>Technology stack</h3>
-        <div className="tech-icons">
-          <FaHtml5 size="3em" style={iconStyle} />
-          <FaCss3 size="3em" style={iconStyle} />
-          <FaSass size="3em" style={iconStyle} />
-          <FaReact size="3em" style={iconStyle} />
-          <ReduxIcon size="3em" style={iconStyle} />
-          <FaNode size="3em" style={iconStyle} />
-          <DiMongodb size="3em" style={iconStyle} />
+      <div className="tech-stack mb-3 w-50">
+        <h3 className="mb-4">Technology stack</h3>
+        <div className="tech-icons d-flex flex-row justify-content-between">
+          {techIcons.map(({ IconComponent, name }) => {
+            return (
+              <IconComponent
+                size="3em"
+                key={name}
+                style={name === "react" ? iconStyleReact : iconStyle}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

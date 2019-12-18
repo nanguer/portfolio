@@ -5,7 +5,7 @@ import PortfolioPage from "../components/PortfolioPage";
 import ContactPage from "../components/ContactPage";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 import NavbarMenu from "../components/NavbarMenu";
 import "../styles/styles.scss";
 import AbsoluteWrapper from "../components/AbsoluteWrapper";
@@ -43,7 +43,7 @@ const AppRouter = () => {
                 onExit={onExit}
                 onEnter={onEnter}
               >
-                <div className="page">
+                <div className="page h-100">
                   <Component />
                 </div>
               </CSSTransition>
