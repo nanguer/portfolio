@@ -4,7 +4,13 @@ const ReduxIcon = () => {
   return (
     <svg
       className="redux-icon"
-      style={{ width: "3em", height: "3em", margin: "0px 7px" }}
+      style={{
+        width: "3em",
+        height: "3em",
+        minWidth: "3em",
+        margin: "0px 7px",
+        fill: "764ABC"
+      }}
       role="img"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
