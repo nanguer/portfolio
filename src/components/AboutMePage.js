@@ -4,23 +4,23 @@ import { DiMongodb } from "react-icons/di";
 import ReduxIcon from "./ReduxIcon";
 
 const AboutMePage = () => {
+  
   const iconStyle = {
     margin: "0px 7px",
-    minWidth:"3em" 
+    minWidth: "3em"
   };
   const iconStyleReact = {
     margin: "0px 7px 0px 0px",
-    minWidth:"3em"
+    minWidth: "3em"
   };
   const techIcons = [
     { IconComponent: FaReact, name: "react" },
     { IconComponent: ReduxIcon, name: "redux" },
-    { IconComponent: FaHtml5, name: "html" },
-    { IconComponent: FaCss3, name: "css"},
+    { IconComponent: FaHtml5, name: "html5" },
+    { IconComponent: FaCss3, name: "css3" },
     { IconComponent: FaSass, name: "sass" },
     { IconComponent: FaNodeJs, name: "node" },
     { IconComponent: DiMongodb, name: "mongo" }
-   
   ];
   return (
     <div
@@ -47,12 +47,11 @@ const AboutMePage = () => {
         <div className="tech-icons d-flex flex-row flex-sm-nowrap flex-wrap justify-content-start justify-content-md-between justify-content-lg-start">
           {techIcons.map(({ IconComponent, name }) => {
             return (
-              <div className="icon-container">
-              <IconComponent
-                size="3em"
-                key={name}
-                style={name === "react" ? iconStyleReact : iconStyle}
-              />  
+              <div className={`icon-container icon-${name}`} key={name} >
+                <IconComponent
+                  size="3em"
+                  style={name === "react" ? iconStyleReact : iconStyle}
+                />
               </div>
             );
           })}
