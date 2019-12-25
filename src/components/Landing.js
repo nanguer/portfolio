@@ -1,41 +1,46 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Footer } from "./Footer";
+import { withRouter } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
-const Landing = () => {
-  const [state, setState] = useState({
-    playState: "pause"
-  });
-
+const Landing = ({ state, history }) => {
   let line1 = useRef(null);
   let line2 = useRef(null);
   let picture = useRef(null);
 
   useEffect(() => {
-    gsap.from([line1, line2], 0.6, {
-      opacity: 0,
-      delay: 0.4,
-      ease: "power3.out",
-      y: 45,
-      stagger: {
-        ease: "power3.out",
-        amount: 0.8
-      }
-    });
-  }, [line1, line2]);
+    console.log(history);
+    // gsap.from([line1, line2], 0.5, {
+    //   opacity: 0,
+    //   delay: .4,
+    //   ease: "power3.out",
+    //   y: 45,
+    //   stagger: {
+    //     ease: "power3.out",
+    //     amount: 0.07
+    //   }
+    // });
+    // return () => {
+    //   console.log('component unmount');
+    //   gsap.to([line1, line2], 0.2, {
+    //     x:-45,
+    //     stagger:{
+    //       ease: "power3.out",
+    //       amount: 0.07
+    //     }
+    //   })
+    //  }
+  }, []);
 
   useEffect(() => {
-    gsap.to(picture, 1, {
-      opacity: 1,
+    gsap.from(picture, 1, {
+      opacity: 0,
       delay: 1.2,
       ease: "power3.out"
     });
   }, [picture]);
 
-  const handleClick = () => {
-    setState({ playState: "play" });
-  };
   const iconStyle = {
     margin: "7px 0px"
   };
@@ -85,4 +90,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default withRouter(Landing);
