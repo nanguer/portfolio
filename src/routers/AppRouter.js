@@ -33,7 +33,7 @@ const AppRouter = () => {
 
   return (
     <Router>
-      <NavbarMenu />
+      <NavbarMenu clickState={state} />
       <div className="stripes" />
       {routes.map(({ path, Component, name }) => (
         <Route key={name} path={path} exact>

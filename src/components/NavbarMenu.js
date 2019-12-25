@@ -9,7 +9,7 @@ import {
   NavItem
 } from "reactstrap";
 
-const NavbarMenu = () => {
+const NavbarMenu = ({clickState}) => {
   const [state, setState] = useState({
     isOpen: false
   });
