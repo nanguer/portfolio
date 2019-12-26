@@ -9,10 +9,11 @@ import {
   NavItem
 } from "reactstrap";
 
-const NavbarMenu = () => {
+const NavbarMenu = ({ navstate, handleSetNav }) => {
   const [state, setState] = useState({
     isOpen: false
   });
+  // const [disabled, setDisabled] = useState(false);
 
   const toggle = () => {
     setState({
@@ -20,12 +21,22 @@ const NavbarMenu = () => {
     });
   };
 
-  const closeNavBar = () => {
+  const handleNavClick = option => {
+    //disableMenu();
+
     if (state.isOpen) {
+      handleSetNav(option);
       return toggle();
     }
-    return;
+    return handleSetNav(option);
   };
+
+  // const disableMenu = () => {
+  //   setDisabled(!disabled);
+  //   setTimeout(() => {
+  //     setDisabled(false);
+  //   }, 1200);
+  // };
 
   return (
     <div>
@@ -46,7 +57,7 @@ const NavbarMenu = () => {
                   to="/"
                   exact={true}
                   activeClassName="active"
-                  onClick={closeNavBar}
+                  onClick={e => handleNavClick("Landing")}
                 >
                   home
                 </NavLink>
@@ -55,7 +66,7 @@ const NavbarMenu = () => {
                 <NavLink
                   className="navbar-navlink"
                   to="/about"
-                  onClick={closeNavBar}
+                  onClick={() => handleNavClick("About")}
                   exact={true}
                 >
                   about
@@ -66,7 +77,7 @@ const NavbarMenu = () => {
                   className="navbar-navlink"
                   to="/portfolio"
                   exact={true}
-                  onClick={closeNavBar}
+                  onClick={() => handleNavClick("Portfolio")}
                 >
                   works
                 </NavLink>
@@ -75,7 +86,7 @@ const NavbarMenu = () => {
                 <NavLink
                   className="navbar-navlink"
                   to="/contact"
-                  onClick={closeNavBar}
+                  onClick={() => handleNavClick("Contact")}
                   exact={true}
                 >
                   contact
