@@ -99,6 +99,7 @@ const AppRouter = () => {
     <Router>
       <NavbarMenu handleSetNav={handleSetNav} />
       <div className="stripes" ref={el => (stripes = el)} />
+
       {routes.map(({ path, Component, name }) => (
         <Route key={name} path={path} exact>
           {({ match, history, ...props }) => (

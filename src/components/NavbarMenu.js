@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 
 const NavbarMenu = ({ navstate, handleSetNav }) => {
+
   const [state, setState] = useState({
     isOpen: false
   });
