@@ -4,7 +4,12 @@
   margin:0.5rem 0;
   z-index: 2;
   color:#9c9c9c;
+  fill:$grey;
   transition: all 0.3s ease 0s;
+}
+
+.icon-redux:hover{
+  fill: $redux;
 }
 
 

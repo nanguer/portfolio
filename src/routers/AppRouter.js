@@ -1,23 +1,21 @@
 import React, { useState, useRef } from "react";
 import LandingLoader from "../components/loaders/LandingLoader";
-//import Landing from "../components/Landing";
-import AboutMePage from "../components/AboutMePage";
-import PortfolioPage from "../components/PortfolioPage";
-import ContactPage from "../components/ContactPage";
+import AboutMeLoader from "../components/loaders/AboutMeLoader";
+import PortfolioLoader from "../components/loaders/PortfolioLoader";
+import ContactLoader from "../components/loaders/ContactLoader";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import NavbarMenu from "../components/NavbarMenu";
-import "../styles/styles.scss";
 import AbsoluteWrapper from "../components/AbsoluteWrapper";
-import gsap from "gsap";
+import { setTimeLine } from "../components/Animations";
 
-const tlStripes = gsap.timeline();
+import "../styles/styles.scss";
 
 const routes = [
   { path: "/", name: "Landing", Component: LandingLoader },
-  { path: "/about", name: "About", Component: AboutMePage },
-  { path: "/portfolio", name: "Portfolio", Component: PortfolioPage },
-  { path: "/contact", name: "Contact", Component: ContactPage }
+  { path: "/about", name: "About", Component: AboutMeLoader },
+  { path: "/portfolio", name: "Portfolio", Component: PortfolioLoader },
+  { path: "/contact", name: "Contact", Component: ContactLoader }
 ];
 
 const AppRouter = () => {
@@ -29,43 +27,6 @@ const AppRouter = () => {
     Contact: false
   });
   let stripes = useRef(null);
-
-  const setTimeLine = option => {
-    if (option === "About") {
-      console.log("about clicked");
-      return tlStripes.to(stripes, {
-        x: 300,
-        duration: 1,
-        delay: 0.5,
-        ease: "power3.Out"
-      });
-    } else if (option === "Landing") {
-      console.log("home clicked");
-      return tlStripes.to(stripes, {
-        x: 0,
-        duration: 1,
-        delay: 0.5,
-        ease: "power3.Out"
-      });
-    } else if (option === "Portfolio") {
-      console.log("home clicked");
-      return tlStripes.to(stripes, {
-        x: 600,
-        duration: 1,
-        delay: 0.5,
-        ease: "power3.Out"
-      });
-    } else if (option === "Contact") {
-      console.log("home clicked");
-      return tlStripes.to(stripes, {
-        x: 900,
-        duration: 1,
-        delay: 0.5,
-        ease: "power3.Out"
-      });
-    }
-    return;
-  };
 
   const handleSetNav = option => {
     if (state[option]) {
@@ -80,20 +41,9 @@ const AppRouter = () => {
         [option]: true
       });
 
-      setTimeLine(option);
+      setTimeLine(option, stripes);
     }
   };
-  // const onEnter = (match, props) => {
-  //   if (match != null) {
-  //     console.log(props);
-  //   }
-  // };
-
-  // const onExit = (match, history) => {
-  //   setTimeout(()=>{
-  //     console.log('wating...');
-  //   }, 600)
-  // };
 
   return (
     <Router>
@@ -108,10 +58,7 @@ const AppRouter = () => {
                 in={match != null}
                 timeout={1600}
                 classNames="page"
-                // addEndListener={onAddListener}
                 unmountOnExit
-                // onExit={onExit}
-                // onEnter={() => onEnter(match, props)}
               >
                 <div className="page h-100">
                   <Component navState={state} handleSetNav={handleSetNav} />

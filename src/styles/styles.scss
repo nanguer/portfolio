@@ -9,6 +9,11 @@
 @import "./components/portfolioitem";
 @import "./components/footer";
 
+.loader {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
 @font-face {
   font-family: "WorkSans";
   src: url("/assets/fonts/WorkSans.woff2") format("woff2");

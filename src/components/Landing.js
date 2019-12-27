@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { handleEnterTitle, handleExitTitle } from "../components/Animations";
 import { Footer } from "./Footer";
 import { withRouter } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
@@ -11,28 +12,11 @@ const Landing = ({ navState, handleSetNav }) => {
 
   useEffect(() => {
     if (navState.Landing) {
-      gsap.from([line1, line2], 0.5, {
-        opacity: 0,
-        delay: 1.2,
-        ease: "power3.out",
-        y: 45,
-        stagger: {
-          ease: "power3.out",
-          amount: 0.4
-        }
-      });
+      handleEnterTitle([line1, line2]);
     }
     if (!navState.Landing) {
-      gsap.to([line2, line1], {
-        y: 45,
-        opacity: 0,
-        stagger: {
-          ease: "power3.out",
-          amount: 0.5
-        }
-      });
+      handleExitTitle([line2, line1]);
     }
-    // return ()=> handleSetNav('Landing');
   }, [navState.Landing]);
 
   useEffect(() => {
@@ -87,7 +71,7 @@ const Landing = ({ navState, handleSetNav }) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer navState={navState} />
     </div>
   );
 };
