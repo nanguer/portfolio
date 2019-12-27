@@ -4,7 +4,6 @@ import { DiMongodb } from "react-icons/di";
 import ReduxIcon from "./ReduxIcon";
 
 const AboutMePage = () => {
-  
   const iconStyle = {
     margin: "0px 7px",
     minWidth: "3em"
@@ -47,7 +46,7 @@ const AboutMePage = () => {
         <div className="tech-icons d-flex flex-row flex-sm-nowrap flex-wrap justify-content-start justify-content-md-between justify-content-lg-start">
           {techIcons.map(({ IconComponent, name }) => {
             return (
-              <div className={`icon-container icon-${name}`} key={name} >
+              <div className={`icon-container icon-${name}`} key={name}>
                 <IconComponent
                   size="3em"
                   style={name === "react" ? iconStyleReact : iconStyle}

@@ -8,8 +8,7 @@ const ReduxIcon = () => {
         width: "3em",
         height: "3em",
         minWidth: "3em",
-        margin: "0px 7px",
-        color: "#9C9C9C"
+        margin: "0px 7px"
       }}
       role="img"
       viewBox="0 0 24 24"

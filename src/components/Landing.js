@@ -1,37 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { handleEnterTitle, handleExitTitle } from "../components/Animations";
 import { Footer } from "./Footer";
 import { withRouter } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
-const Landing = ({ state, history }) => {
+const Landing = ({ navState, handleSetNav }) => {
   let line1 = useRef(null);
   let line2 = useRef(null);
   let picture = useRef(null);
 
   useEffect(() => {
-    console.log(history);
-    // gsap.from([line1, line2], 0.5, {
-    //   opacity: 0,
-    //   delay: .4,
-    //   ease: "power3.out",
-    //   y: 45,
-    //   stagger: {
-    //     ease: "power3.out",
-    //     amount: 0.07
-    //   }
-    // });
-    // return () => {
-    //   console.log('component unmount');
-    //   gsap.to([line1, line2], 0.2, {
-    //     x:-45,
-    //     stagger:{
-    //       ease: "power3.out",
-    //       amount: 0.07
-    //     }
-    //   })
-    //  }
-  }, []);
+    if (navState.Landing) {
+      handleEnterTitle([line1, line2]);
+    }
+    if (!navState.Landing) {
+      handleExitTitle([line2, line1]);
+    }
+  }, [navState.Landing]);
 
   useEffect(() => {
     gsap.from(picture, 1, {
@@ -85,7 +71,7 @@ const Landing = ({ state, history }) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer navState={navState} />
     </div>
   );
 };

@@ -1,55 +1,67 @@
-import React, { useState } from "react";
-import Landing from "../components/Landing";
-import AboutMePage from "../components/AboutMePage";
-import PortfolioPage from "../components/PortfolioPage";
-import ContactPage from "../components/ContactPage";
+import React, { useState, useRef } from "react";
+import LandingLoader from "../components/loaders/LandingLoader";
+import AboutMeLoader from "../components/loaders/AboutMeLoader";
+import PortfolioLoader from "../components/loaders/PortfolioLoader";
+import ContactLoader from "../components/loaders/ContactLoader";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import NavbarMenu from "../components/NavbarMenu";
-import "../styles/styles.scss";
 import AbsoluteWrapper from "../components/AbsoluteWrapper";
+import { setTimeLine } from "../components/Animations";
+
+import "../styles/styles.scss";
 
 const routes = [
-  { path: "/", name: "Landing", Component: Landing },
-  { path: "/about", name: "About", Component: AboutMePage },
-  { path: "/portfolio", name: "Portfolio", Component: PortfolioPage },
-  { path: "/contact", name: "Contact", Component: ContactPage }
+  { path: "/", name: "Landing", Component: LandingLoader },
+  { path: "/about", name: "About", Component: AboutMeLoader },
+  { path: "/portfolio", name: "Portfolio", Component: PortfolioLoader },
+  { path: "/contact", name: "Contact", Component: ContactLoader }
 ];
 
 const AppRouter = () => {
   const [state, setState] = useState({
     initial: false,
-    clicked: null
+    Landing: true,
+    About: false,
+    Portfolio: false,
+    Contact: false
   });
-  const onEnter = (match, props) => {
-    if (match != null) {
-      console.log(props);
-    }
-  };
+  let stripes = useRef(null);
 
-  const onExit = (match, history) => {
-    console.log(history.location.pathname);
+  const handleSetNav = option => {
+    if (state[option]) {
+      return null;
+    } else {
+      setState({
+        ...state,
+        Landing: false,
+        About: false,
+        Portfolio: false,
+        Contact: false,
+        [option]: true
+      });
+
+      setTimeLine(option, stripes);
+    }
   };
 
   return (
     <Router>
-      <NavbarMenu clickState={state} />
-      <div className="stripes" />
+      <NavbarMenu handleSetNav={handleSetNav} />
+      <div className="stripes" ref={el => (stripes = el)} />
+
       {routes.map(({ path, Component, name }) => (
         <Route key={name} path={path} exact>
           {({ match, history, ...props }) => (
             <AbsoluteWrapper>
               <CSSTransition
                 in={match != null}
-                timeout={2000}
+                timeout={1600}
                 classNames="page"
-                // addEndListener={onAddListener}
                 unmountOnExit
-                onExit={() => onExit(match, history)}
-                onEnter={() => onEnter(match, props)}
               >
                 <div className="page h-100">
-                  <Component state={state} />
+                  <Component navState={state} handleSetNav={handleSetNav} />
                 </div>
               </CSSTransition>
             </AbsoluteWrapper>
