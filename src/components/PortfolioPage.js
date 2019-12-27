@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PortfolioItem from "./PortfolioItem";
+import ItemLoader from "../components/loaders/ItemLoader";
 import data from "../data/data.json";
 
 const PortfolioPage = () => {
@@ -12,7 +12,7 @@ const PortfolioPage = () => {
   return (
     <div className="portfolio-list d-flex flex-wrap justify-content-around lign-items-start">
       {works.map(work => (
-        <PortfolioItem key={work.id} work={work} />
+        <ItemLoader key={work.id} work={work} />
       ))}
     </div>
   );
