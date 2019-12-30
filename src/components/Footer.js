@@ -18,9 +18,9 @@ export const Footer = ({ navState }) => {
   return (
     <div
       className="d-flex flex-row flex-wrap justify-content-center justify-content-md-between"
-      style={{ margin: "0 1rem 1rem" }}
+      style={{ padding: "0 1rem" }}
     >
-      <div className="order-1 order-md-1 order-lg-0 justify-content-start footer__contact">
+      <div className="order-1 order-md-1 order-lg-0 justify-content-start footer__contact" style={{margin:'0'}}>
         <div ref={el => (contactLine1 = el)}>E: nahuelgimenez@gmail.com</div>
         <div ref={el => (contactLine2 = el)} className="ml-5">
           T: (+48) 789397113
@@ -29,9 +29,9 @@ export const Footer = ({ navState }) => {
       <div
         ref={el => (contactLine3 = el)}
         className="order-0 order-md-0 order-md-lg-1 footer__introduce justify-content-end align-self-end"
-        style={{ marginBottom: "0.5rem" }}
+        
       >
-        <p className="text-md-right text-center">
+        <p className="text-md-right text-center" style={{margin: '0'}}>
           Hello, I'm <span className="dot">Nahuel Gimenez</span>, Fullstack
           developer based in Gdansk, Poland.
         </p>

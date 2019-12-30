@@ -10,7 +10,7 @@ const PortfolioPage = () => {
   }, []);
 
   return (
-    <div className="portfolio-list d-flex flex-wrap justify-content-around lign-items-start">
+    <div className="portfolio-list d-flex flex-wrap justify-content-around align-items-start">
       {works.map(work => (
         <ItemLoader key={work.id} work={work} />
       ))}

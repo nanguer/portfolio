@@ -1,3 +1,4 @@
 {
-  "plugins": ["html"]
+  "plugins": ["html"],
+  "parser": "babel-eslint"
 }

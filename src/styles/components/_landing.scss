@@ -51,7 +51,7 @@ div.singleLine {
 
 @mixin meBg {
   display: flex;
-  opacity: 0;
+  opacity: 1;
   background-image: url("../assets/me-bg.jpg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -70,9 +70,17 @@ div.singleLine {
   top: 14vh;
 }
 
+@media (max-width: 768px) {
+  .meBg {
+    @include meBg();
+    opacity: 0;
+  }
+}
+
 @media (min-width: 992px) {
   .meBg {
     @include meBg();
+    opacity: 1;
     position: relative;
     height: 65vh;
     width: 91vw;

@@ -40,7 +40,7 @@ const NavbarMenu = ({ navstate, handleSetNav }) => {
   // };
 
   return (
-    <div>
+    <div className='position-absolute' style={{width:'-webkit-fill-available'}}>
       <Navbar dark expand="md" style={{ zIndex: "2" }}>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={state.isOpen} navbar>

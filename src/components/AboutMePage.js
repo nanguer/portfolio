@@ -24,7 +24,7 @@ const AboutMePage = () => {
   return (
     <div
       className="container
-     h-100 d-flex flex-column justify-content-around"
+     h-100 d-flex flex-column justify-content-between pt-5"
     >
       <p>
         I'm a poland-based Web Developer and IT and Telecommunications

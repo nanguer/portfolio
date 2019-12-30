@@ -1,0 +1,8 @@
+@import "../settings.scss";
+
+.arrow-container {
+    padding-left: 85vw;
+    &:hover{
+        cursor: pointer;
+    }
+}

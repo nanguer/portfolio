@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { handleEnterTitle, handleExitTitle } from "../components/Animations";
+import { handleEnterTitle, handleExitTitle, enterPicture, exitPicture } from "../components/Animations";
 import { Footer } from "./Footer";
 import { withRouter } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
@@ -8,24 +7,23 @@ import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 const Landing = ({ navState, handleSetNav }) => {
   let line1 = useRef(null);
   let line2 = useRef(null);
+  let line3 = useRef(null);
   let picture = useRef(null);
 
   useEffect(() => {
     if (navState.Landing) {
-      handleEnterTitle([line1, line2]);
+      handleEnterTitle([line1, line2, line3]);
+      enterPicture(picture);
     }
     if (!navState.Landing) {
-      handleExitTitle([line2, line1]);
+      handleExitTitle([line3, line2, line1]);
+      exitPicture(picture);
     }
   }, [navState.Landing]);
 
-  useEffect(() => {
-    gsap.from(picture, 1, {
-      opacity: 0,
-      delay: 1.2,
-      ease: "power3.out"
-    });
-  }, [picture]);
+  // useEffect(() => {
+  //   enterPicture(picture);
+  // }, [picture]);
 
   const iconStyle = {
     margin: "7px 0px"
@@ -51,7 +49,7 @@ const Landing = ({ navState, handleSetNav }) => {
           </div>
         </div>
         <div className="meBg" ref={el => (picture = el)} />
-        <div className="social-media flex-column justify-content-end h-100">
+        <div className="social-media flex-column justify-content-end h-100" ref={el=>line3=el}>
           <div className="d-flex align-items-center flex-column justify-content-end">
             <div className="follow text-nowrap mb-sm-4">Follow Me</div>
             <div className="singleLine mt-sm-5">
