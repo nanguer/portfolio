@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { handleEnterTitle, handleExitTitle, enterPicture, exitPicture } from "../components/Animations";
 import { Footer } from "./Footer";
 import { withRouter } from "react-router-dom";
-import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
+  import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 const Landing = ({ navState, handleSetNav }) => {
   let line1 = useRef(null);

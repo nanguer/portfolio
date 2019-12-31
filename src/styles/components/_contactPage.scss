@@ -6,3 +6,31 @@
         cursor: pointer;
     }
 }
+
+h3.contact-title {
+    color:$white;
+}
+
+.contact-social-icons > div > svg {
+    transition: ease-in-out 0.3s all;
+            &:hover{
+                fill:$purple;
+            }
+}
+
+.arrow-container > svg {
+    opacity: 0.1;
+    animation: arrow ease-in-out 0.8s infinite;
+}
+
+
+@keyframes arrow {
+    50% {
+        fill: $purple;
+        opacity: 1;
+      }
+      100%{
+        transform: translateY(4vh);
+        opacity: 0
+      }
+}
