@@ -5,3 +5,24 @@
 	min-width: 16vw;
 	margin: $margin;
 }
+
+div.project-links > div {
+	padding-right: 2vw;
+	
+}
+
+a.icon-link > svg{
+	transition: all 0.3s ease-in-out;
+}
+
+a.icon-link {
+	color: $white;
+	transition: all 0.2s ease-in;
+	&:hover{
+		color: $purple;
+	}
+	&:hover svg{
+		width: 1.8em;
+		height: 1.8em;
+	}
+}
