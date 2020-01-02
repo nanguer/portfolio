@@ -1,28 +1,58 @@
-@import '../settings.scss';
+@import "../settings.scss";
 
 .portfolio-item {
-	max-width: min-content;
-	min-width: 16vw;
-	margin: $margin;
+  max-width: min-content;
+  min-width: 16vw;
+  margin: $margin;
 }
 
 div.project-links > div {
-	padding-right: 2vw;
-	
+  padding: 0 1vw;
 }
 
-a.icon-link > svg{
-	transition: all 0.3s ease-in-out;
+a.icon-link > svg {
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin tooltip {
+  opacity: 0;
+  color: white;
+  position: absolute;
+  top: 95%;
+  padding: 5px;
+  transition: all 0.2s ease-in-out;
+}
+%tooltip-styles {
+  @include tooltip();
+}
+
+.tooltip-works-link {
+  @extend%tooltip-styles;
+  left: 28%;
+}
+.tooltip-works-github {
+  @extend%tooltip-styles;
+  left: 55%;
 }
 
 a.icon-link {
-	color: $white;
-	transition: all 0.2s ease-in;
-	&:hover{
-		color: $purple;
-	}
-	&:hover svg{
-		width: 1.8em;
-		height: 1.8em;
-	}
+  color: $white;
+  transition: all 0.2s ease;
+  &:hover {
+    color: $purple;
+  }
+  &:hover svg {
+    width: 1.8em;
+    height: 1.8em;
+  }
+}
+
+@each $tech, $position, $left in $icon-divs {
+  .project-links__icon-div-#{$tech} {
+    position: absolute;
+    #{$position}: 41%;
+    &:hover + div {
+      opacity: 1;
+    }
+  }
 }
