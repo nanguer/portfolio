@@ -5,7 +5,7 @@
     "description": "Complete fullstack MERN stack application designed for events management. ",
     "img": "/assets/Images/Time_Destroyer.png",
     "link": "https://hackathon-management.herokuapp.com/",
-    "github":""
+    "github": ""
   },
   {
     "id": 2,
@@ -13,16 +13,16 @@
     "description": "Social platform aimed to gather and share information on campsites around the world. Users login and authorization, MongoDB, Bootstrap designed, Google Maps API",
     "img": "/assets/Images/Yelpcamp.png",
     "link": "",
-    "github":""
+    "github": ""
   },
-  
+
   {
     "id": 3,
     "title": "Personal Blog App",
     "description": "Minimalistic Blog application with basic CRUD operations functionality ",
     "img": "/assets/Images/BlogApp.png",
     "link": "",
-    "github":""
+    "github": ""
   },
   {
     "id": 4,
@@ -30,15 +30,15 @@
     "description": "React app developed to help you taking decisions",
     "img": "",
     "link": "",
-    "github":""
+    "github": ""
   },
   {
     "id": 5,
     "title": "Expensify",
     "description": "Application designed to help you keep control on personal expenses. React, Redux, Firebase.",
-    "img": "",
-    "link": "",
-    "github":""
+    "img": "/assets/Images/expensify.png",
+    "link": "https://nng-expensify.herokuapp.com/",
+    "github": ""
   },
   {
     "id": 7,
@@ -46,7 +46,7 @@
     "description": "Macro-Events company website, with special care in animated navigation (jQuery/GSAP-driven) ",
     "img": "",
     "link": "",
-    "github":""
+    "github": ""
   },
   {
     "id": 8,
@@ -54,6 +54,6 @@
     "description": "This website was also developed with ",
     "img": "",
     "link": "",
-    "github":""
+    "github": ""
   }
 ]
