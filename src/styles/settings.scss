@@ -1,6 +1,6 @@
 $margin: 5px;
 $viewport-height: 95vh;
-$bg-color: rgb(28, 28, 28);
+$bg-color: rgb(46, 45, 45);
 $grey: #9c9c9c;
 $white: #fff;
 $highlight-font-color: $white;
@@ -26,7 +26,4 @@ $icons: (
   "node": #7dc908,
   "mongo": #4da53f
 );
-$icon-divs: (
-  "link": "left",
-  "github": "right"
-);
+$icon-divs: ("link" "github");

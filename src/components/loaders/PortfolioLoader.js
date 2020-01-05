@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-const PortfolioPage = React.lazy(() => import("../PortfolioPage"));
+const PortfolioPage = React.lazy(() => import("../portfolio/PortfolioPage"));
 
 const PortfolioLoader = ({ navState }) => (
   <div>

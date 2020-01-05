@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-const PortfolioItem = React.lazy(() => import("../PortfolioItem"));
+const PortfolioItem = React.lazy(() => import("../portfolio/PortfolioItem"));
 
 const ItemLoader = ({ work }) => (
   <>

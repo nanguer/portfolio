@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ItemLoader from "../components/loaders/ItemLoader";
-import data from "../data/data.json";
+import ItemLoader from "../loaders/ItemLoader";
+import data from "../../data/data.json";
 
 const PortfolioPage = () => {
   const [works, setWorks] = useState([]);
