@@ -3,34 +3,9 @@
     "id": 1,
     "title": "Hackathon Management App",
     "description": "Complete fullstack MERN stack application designed for events management. ",
-    "img": "/assets/Images/Time_Destroyer.png",
+    "img": "/assets/Images/hackathonManag.png",
     "link": "https://hackathon-management.herokuapp.com/",
-    "github": ""
-  },
-  {
-    "id": 2,
-    "title": "YelpCamp",
-    "description": "Social platform aimed to gather and share information on campsites around the world. Users login and authorization, MongoDB, Bootstrap designed, Google Maps API",
-    "img": "/assets/Images/Yelpcamp.png",
-    "link": "",
-    "github": ""
-  },
-
-  {
-    "id": 3,
-    "title": "Personal Blog App",
-    "description": "Minimalistic Blog application with basic CRUD operations functionality ",
-    "img": "/assets/Images/BlogApp.png",
-    "link": "",
-    "github": ""
-  },
-  {
-    "id": 4,
-    "title": "Indecision App",
-    "description": "React app developed to help you taking decisions",
-    "img": "",
-    "link": "",
-    "github": ""
+    "github": "https://github.com/nanguer/hackathon-app"
   },
   {
     "id": 5,
@@ -38,16 +13,42 @@
     "description": "Application designed to help you keep control on personal expenses. React, Redux, Firebase.",
     "img": "/assets/Images/expensify.png",
     "link": "https://nng-expensify.herokuapp.com/",
-    "github": ""
+    "github": "https://github.com/nanguer/react-course-expensify-app"
+  },
+  {
+    "id": 2,
+    "title": "YelpCamp",
+    "description": "Social platform aimed to gather and share information on campsites around the world. Users login and authorization, MongoDB, Bootstrap designed, Google Maps API",
+    "img": "/assets/Images/Yelpcamp.png",
+    "link": "https://radiant-atoll-94538.herokuapp.com/",
+    "github": "https://github.com/nanguer/yelpcamp"
   },
   {
     "id": 7,
     "title": "ZMP",
     "description": "Macro-Events company website, with special care in animated navigation (jQuery/GSAP-driven) ",
-    "img": "",
-    "link": "",
-    "github": ""
+    "img": "/assets/Images/zmp-example.png",
+    "link": "http://zmp-example.surge.sh/",
+    "github": "https://github.com/nanguer/ZMP-modular"
   },
+
+  {
+    "id": 3,
+    "title": "Personal Blog App",
+    "description": "Minimalistic Blog application with basic CRUD operations functionality",
+    "img": "/assets/Images/BlogApp.png",
+    "link": "https://immense-sierra-46416.herokuapp.com/",
+    "github": "https://github.com/nanguer/BlogApp"
+  },
+  {
+    "id": 4,
+    "title": "Indecision App",
+    "description": "React app developed to help you taking decisions",
+    "img": "/assets/Images/indecisionApp.png",
+    "link": "http://nng-indecision-app.surge.sh/",
+    "github": "https://github.com/nanguer/indecision-app"
+  },
+
   {
     "id": 8,
     "title": "This Web",

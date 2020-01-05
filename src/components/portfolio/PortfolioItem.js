@@ -6,7 +6,7 @@ const PortfolioItem = ({ work }) => {
 
   return (
     <div
-      className="portfolio-item d-flex align-items-center text-center flex-column col-12 col-md-6 col-sm-6"
+      className="portfolio-item d-flex align-items-center text-center flex-column col-6 col-lg-4"
       style={{ padding: "5vh 1vh" }}
     >
       <h2 style={{ color: "#fff" }}>{title}</h2>
