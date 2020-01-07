@@ -15,6 +15,11 @@
   font-weight: 700;
 }
 
-// .name {
-//   color: $highlight-font-color;
-// }
+.navbar-small {
+  margin: 10px 10px 0 0;
+  background-color: #483d8b;
+  @media (min-width: 768px) {
+    margin: unset;
+    background-color: unset;
+  }
+}

@@ -1,10 +1,11 @@
 import React, { Suspense } from "react";
+import {SpinnerItem} from '../Spinner';
 
 const PortfolioItem = React.lazy(() => import("../portfolio/PortfolioItem"));
 
 const ItemLoader = ({ work }) => (
   <>
-    <Suspense fallback={<div className="loader">Loading...</div>}>
+    <Suspense fallback={<SpinnerItem />}>
       <PortfolioItem work={work} />
     </Suspense>
   </>

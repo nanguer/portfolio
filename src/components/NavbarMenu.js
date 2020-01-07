@@ -10,7 +10,6 @@ import {
 } from "reactstrap";
 
 const NavbarMenu = ({ navstate, handleSetNav }) => {
-
   const [state, setState] = useState({
     isOpen: false
   });
@@ -40,10 +39,13 @@ const NavbarMenu = ({ navstate, handleSetNav }) => {
   // };
 
   return (
-    <div className='position-absolute' style={{width:'-webkit-fill-available'}}>
+    <div
+      className="position-absolute"
+      style={{ width: "-webkit-fill-available" }}
+    >
       <Navbar dark expand="md" style={{ zIndex: "2" }}>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={state.isOpen} navbar>
+        <Collapse isOpen={state.isOpen} navbar className="navbar-small">
           <Container className="name justify-content-start">
             nahuel <strong style={{ color: "#fff" }}>Gimenez</strong>
           </Container>
