@@ -1,27 +1,27 @@
 @import "../settings.scss";
+@import "./rectangle-out";
 
-.icon-container{
-  margin:0.5rem 0;
-  z-index: 2;
-  color:#9c9c9c;
-  fill:$grey;
-  transition: all 0.3s ease 0s;
+.icon-container {
+	margin: 0.5rem 0;
+	z-index: 2;
+	color: #9c9c9c;
+	fill: $grey;
+	transition: all 0.3s ease 0s;
 }
 
-.icon-redux:hover{
-  fill: $redux;
+.icon-redux:hover {
+	fill: $redux;
 }
-
 
 @each $tech, $color in $icons {
-  .icon-#{$tech}:hover {
-    cursor:pointer;
-    color:$color;
-  }
+	.icon-#{$tech}:hover {
+		cursor: pointer;
+		color: $color;
+	}
 }
 
-@media (min-width: 992px){
-  .icon-container{
-    margin: 0.5rem 1.5rem 0.5rem 0.5rem
-  }
+@media (min-width: 992px) {
+	.icon-container {
+		margin: 0.5rem 1.5rem 0.5rem 0.5rem;
+	}
 }
