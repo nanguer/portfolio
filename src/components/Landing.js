@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { handleEnterTitle, handleExitTitle, enterPicture, exitPicture } from "../components/Animations";
+import { handleEnterTitle, handleExitTitle, enterPicture, exitPicture, setOpacity } from "../components/Animations";
 import { Footer } from "./Footer";
 import { withRouter } from "react-router-dom";
   import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
@@ -9,11 +9,13 @@ const Landing = ({ navState, handleSetNav }) => {
   let line2 = useRef(null);
   let line3 = useRef(null);
   let picture = useRef(null);
+  let cover = useRef(null);
 
   useEffect(() => {
     if (navState.Landing) {
       handleEnterTitle([line1, line2, line3]);
       enterPicture(picture);
+      setOpacity(cover);
     }
     if (!navState.Landing) {
       handleExitTitle([line3, line2, line1]);
@@ -32,8 +34,9 @@ const Landing = ({ navState, handleSetNav }) => {
   return (
     <div className="wrapper d-flex flex-column justify-content-between">
       <div
-        className="container-fluid d-flex flex-row"
-        style={{ height: "-webkit-fill-available" }}
+      ref = {el => cover = el }
+        className="cover container-fluid d-flex flex-row"
+        style={{ height: "-webkit-fill-available", opacity: 0 }}
       >
         <div className="container greet" style={{ alignSelf: "center" }}>
           <div className="d-flex flex-column">

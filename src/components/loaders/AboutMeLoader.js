@@ -1,10 +1,11 @@
 import React, { Suspense } from "react";
+import {Spinner} from "../Spinner";
 
 const AboutMePage = React.lazy(() => import("../AboutMePage"));
 
 const AboutMeLoader = ({ navState }) => (
   <>
-    <Suspense fallback={<div className="loader">Loading...</div>}>
+    <Suspense fallback={<Spinner />}>
       <AboutMePage navState={navState} />
     </Suspense>
   </>
