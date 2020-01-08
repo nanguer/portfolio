@@ -1,29 +1,30 @@
 @import "./settings.scss";
 
 body {
-  font-size: 20px;
-  color: $main-font-color;
-  font-weight: 400;
-  overflow-y: overlay;
-  overflow-x: hidden;
+	font-size: 20px;
+	color: $main-font-color;
+	font-weight: 400;
+	overflow-y: overlay;
+	overflow-x: hidden;
 }
 
 h1 {
-  font-weight: 700;
-  color: $highlight-font-color;
+	font-weight: 700;
+	color: $highlight-font-color;
 }
 
 li {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 .wrapper {
-  height: 89vh;
+	height: 89vh;
 }
 
 ul {
-  padding: 0px;
+	padding: 0px;
 }
 
-
-
+ul a:hover {
+	text-decoration: none;
+}

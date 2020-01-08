@@ -1,6 +1,24 @@
 import gsap from "gsap";
 
 const tlStripes = gsap.timeline();
+const tlNavbar = gsap.timeline();
+
+export const animateMenu = (target, direction) => {
+	if (direction === "forward") {
+		return tlNavbar.from(target, {
+			x: 320,
+			duration: 1,
+			delay: 0.5,
+			ease: "power3.out",
+			stagger: {
+				ease: "power3.out",
+				amount: 0.4
+			}
+		});
+	} else if (direction === "backwards") {
+		return tlNavbar.reverse();
+	}
+};
 
 //Stripes background animation timeline
 export const setTimeLine = (option, target) => {

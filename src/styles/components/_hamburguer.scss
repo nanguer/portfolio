@@ -11,34 +11,33 @@
 @import "../settings.scss";
 
 a {
-  transition: color 0.3s ease;
+	transition: color 0.3s ease;
 }
 
 #menuToggle {
-  display: block;
-  position: absolute;
-
-  z-index: 7;
-  -webkit-user-select: none;
-  user-select: none;
-  //   @media (min-width: 768px) {
-  //     display: none;
-  //   }
+	display: block;
+	position: absolute;
+	z-index: 7;
+	-webkit-user-select: none;
+	user-select: none;
+	//   @media (min-width: 768px) {
+	//     display: none;
+	//   }
 }
 
 #menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
-  /* hide this */
-  z-index: 8;
-  /* and place it over the hamburger */
-  -webkit-touch-callout: none;
+	display: block;
+	width: 39px;
+	height: 32px;
+	position: absolute;
+	top: -4px;
+	left: -10px;
+	cursor: pointer;
+	opacity: 0;
+	/* hide this */
+	z-index: 8;
+	/* and place it over the hamburger */
+	-webkit-touch-callout: none;
 }
 
 /*
@@ -46,25 +45,27 @@ a {
     */
 
 #menuToggle span {
-  display: block;
-  width: 33px;
-  height: 2px;
-  margin-bottom: 5px;
-  position: relative;
-  background: $white;
-  border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+	right: 0.3rem;
+	display: block;
+	width: 2px;
+	height: 20px;
+	margin: 2px;
+	margin-bottom: 5px;
+	position: relative;
+	background: $white;
+	border-radius: 3px;
+	z-index: 1;
+	transform-origin: 4px 0px;
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+		background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
-  transform-origin: 0% 0%;
+	transform-origin: 0% 0%;
 }
 
 #menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
 }
 
 /* 
@@ -73,9 +74,9 @@ a {
     */
 
 #menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: $white;
+	opacity: 1;
+	transform: translate(1px, 6px) rotate(45deg);
+	background: $white;
 }
 
 /*
@@ -83,8 +84,8 @@ a {
     */
 
 #menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
+	opacity: 0;
+	transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 /*
@@ -92,8 +93,8 @@ a {
     */
 
 #menuToggle input:checked ~ span:nth-last-child(2) {
-  opacity: 1;
-  transform: rotate(-45deg) translate(-1px, 2px);
+	opacity: 1;
+	transform: rotate(-45deg) translate(6px, 5px);
 }
 
 /*
@@ -102,26 +103,24 @@ a {
     */
 
 #menuHamb {
-  position: absolute;
-
-  background: $bg-color;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  transform-origin: 0% 0%;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+	background: $bg-color;
+	list-style-type: none;
+	-webkit-font-smoothing: antialiased;
+	/* to stop flickering of text in safari */
+	transform-origin: 0% 0%;
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 #menuHamb li {
-  padding: 10px 0;
-  font-size: 22px;
+	padding: 0.7rem 0.5rem 0 0.5rem;
+	font-size: 1rem;
 }
 
 /*
     * And let's fade it in from the left
     */
 
-// #menuToggle input:checked ~ ul {
-//   transform: scale(1, 1);
-//   opacity: 1;
-// }
+.checkbox-container input:checked ~ ul {
+	transform: scale(1, 1);
+	opacity: 1;
+}
