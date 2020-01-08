@@ -5,7 +5,8 @@ import PortfolioLoader from "../components/loaders/PortfolioLoader";
 import ContactLoader from "../components/loaders/ContactLoader";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import NavbarMenu from "../components/NavbarMenu";
+//import NavbarMenu from "../components/NavbarMenu";
+import Navbar from "../components/Navbar";
 import AbsoluteWrapper from "../components/AbsoluteWrapper";
 import { setTimeLine } from "../components/Animations";
 
@@ -47,7 +48,7 @@ const AppRouter = () => {
 
   return (
     <Router>
-      <NavbarMenu handleSetNav={handleSetNav} />
+      <Navbar handleSetNav={handleSetNav} />
       <div className="stripes" ref={el => (stripes = el)} />
 
       {routes.map(({ path, Component, name }) => (
