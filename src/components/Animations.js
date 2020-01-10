@@ -2,6 +2,7 @@ import gsap from "gsap";
 
 const tlStripes = gsap.timeline();
 
+//NAVBAR ANIMATIONS
 export const constructAnimation = (menuItems, hamburguer) => {
 	const tlNavbar = gsap.timeline({ paused: true });
 	tlNavbar.to(menuItems, {
@@ -54,46 +55,23 @@ export const animateMenu = (timeline, direction) => {
 	}
 };
 
-// export const animateHamb = (target, direction) => {
-// 	console.log("animateHamb");
-// 	if (!direction) {
-// 		gsap.to(target[0], 0.2, {
-// 			x: -2,
-// 			y: 4,
-// 			rotation: "45deg",
-// 			ease: "power3.In"
-// 		});
-// 		gsap.to(target[1], 0.2, {
-// 			opacity: 0,
-// 			scale: (0.2, 0.2),
-// 			ease: "power3.In"
-// 		});
-// 		gsap.to(target[2], 0.2, {
-// 			x: -7,
-// 			y: 0,
-// 			rotation: "-45deg",
-// 			ease: "power3.In"
-// 		});
-// 	} else {
-// 		gsap.to(target[0], 0.2, {
-// 			x: 0,
-// 			y: 0,
-// 			rotation: "0deg",
-// 			ease: "power3.In"
-// 		});
-// 		gsap.to(target[1], 0.2, {
-// 			opacity: 1,
-// 			scale: (1, 1),
-// 			ease: "power3.In"
-// 		});
-// 		gsap.to(target[2], 0.2, {
-// 			x: 0,
-// 			y: 0,
-// 			rotation: "0deg",
-// 			ease: "power3.In"
-// 		});
-// 	}
-// };
+export const animateMenuOption = option => {
+	gsap.from(option, {
+		duration: 0.6,
+		yPercent: 200,
+		opacity: 0,
+		ease: "power3.In"
+	});
+};
+
+export const animateMenuBack = option => {
+	gsap.from(option, {
+		duration: 1,
+		yPercent: 100,
+		opacity: 0,
+		ease: "power3.In"
+	});
+};
 
 //Stripes background animation timeline
 export const setTimeLine = (option, target) => {

@@ -1,6 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { animateMenu, constructAnimation } from "./Animations";
+import {
+	animateMenu,
+	constructAnimation,
+	animateMenuOption,
+	animateMenuBack
+} from "./Animations";
 
 export default ({ navstate, handleSetNav }) => {
 	const [isOpen, setOpen] = useState(false);
@@ -36,6 +41,14 @@ export default ({ navstate, handleSetNav }) => {
 		toggle(booleanValue);
 	};
 
+	const handleMouseEnter = option => {
+		animateMenuOption(option);
+	};
+
+	const handleMouseLeave = option => {
+		animateMenuBack(option);
+	};
+
 	return (
 		<nav role="navigation">
 			<div className="container-fluid menu d-flex flex-row position-absolute justify-content-end pt-2">
@@ -64,7 +77,12 @@ export default ({ navstate, handleSetNav }) => {
 							activeClassName="active"
 							onClick={() => handleNavClick("Landing", isOpen)}
 						>
-							<li ref={el => (menu1 = el)} className="hambHome">
+							<li
+								ref={el => (menu1 = el)}
+								onMouseEnter={() => handleMouseEnter(menu1)}
+								// onMouseLeave={() => handleMouseLeave(menu1)}
+								className="hambHome"
+							>
 								Home
 							</li>
 						</NavLink>

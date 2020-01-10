@@ -11,14 +11,9 @@
 @import "./components/spinner";
 @import "./components/hamburguer";
 
-.loader {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
 @font-face {
-  font-family: "WorkSans";
-  src: url("/assets/fonts/WorkSans.woff2") format("woff2");
+	font-family: "WorkSans";
+	src: url("/assets/fonts/WorkSans.woff2") format("woff2");
 }
 
 // CUSTOM SCSS
