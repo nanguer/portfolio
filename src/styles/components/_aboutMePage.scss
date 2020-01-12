@@ -1,26 +1,35 @@
 @import "../settings.scss";
 
 .icon-container {
-	margin: 0.5rem 0;
-	z-index: 2;
-	color: #9c9c9c;
-	fill: $grey;
-	transition: all 0.3s ease 0s;
+  margin: 0.5rem 0;
+  z-index: 2;
+  color: #9c9c9c;
+  fill: $grey;
+  transition: all 0.3s ease 0s;
 }
 
 .icon-redux:hover {
-	fill: $redux;
+  fill: $redux;
+}
+
+.arrow-container-about:hover {
+	cursor:pointer;
+}
+
+.arrow-container-about > svg {
+  opacity: 0.1;
+  animation: arrow ease-in-out 0.8s infinite;
 }
 
 @each $tech, $color in $icons {
-	.icon-#{$tech}:hover {
-		cursor: pointer;
-		color: $color;
-	}
+  .icon-#{$tech}:hover {
+    cursor: pointer;
+    color: $color;
+  }
 }
 
 @media (min-width: 992px) {
-	.icon-container {
-		margin: 0.5rem 1.5rem 0.5rem 0.5rem;
-	}
+  .icon-container {
+    margin: 0.5rem 1.5rem 0.5rem 0.5rem;
+  }
 }

@@ -1,13 +1,15 @@
 import React from "react";
 
-const ReduxIcon = () => {
+const ReduxIcon = ({ isdesktop }) => {
+  const size = isdesktop ? "3em" : "2em";
+
   return (
     <svg
       className="redux-icon"
       style={{
-        width: "3em",
-        height: "3em",
-        minWidth: "3em",
+        width: size,
+        height: size,
+        minWidth: "2em",
         margin: "0px 7px"
       }}
       role="img"
