@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import LandingLoader from "../components/loaders/LandingLoader";
 import AboutMeLoader from "../components/loaders/AboutMeLoader";
 import PortfolioLoader from "../components/loaders/PortfolioLoader";
@@ -13,64 +13,72 @@ import { setTimeLine } from "../components/Animations";
 import "../styles/styles.scss";
 
 const routes = [
-  { path: "/", name: "Landing", Component: LandingLoader },
-  { path: "/about", name: "About", Component: AboutMeLoader },
-  { path: "/portfolio", name: "Portfolio", Component: PortfolioLoader },
-  { path: "/contact", name: "Contact", Component: ContactLoader }
+	{ path: "/", name: "Landing", Component: LandingLoader },
+	{ path: "/about", name: "About", Component: AboutMeLoader },
+	{ path: "/portfolio", name: "Portfolio", Component: PortfolioLoader },
+	{ path: "/contact", name: "Contact", Component: ContactLoader }
 ];
 
 const AppRouter = () => {
-  const [state, setState] = useState({
-    initial: false,
-    Landing: true,
-    About: false,
-    Portfolio: false,
-    Contact: false
-  });
-  let stripes = useRef(null);
+	const [state, setState] = useState({
+		initial: false,
+		Landing: true,
+		About: false,
+		Portfolio: false,
+		Contact: false,
+		isDesktop: false
+	});
+	let stripes = useRef(null);
 
-  const handleSetNav = option => {
-    if (state[option]) {
-      return null;
-    } else {
-      setState({
-        ...state,
-        Landing: false,
-        About: false,
-        Portfolio: false,
-        Contact: false,
-        [option]: true
-      });
+	useEffect(() => {
+		setState({ ...state, isDesktop: window.innerWidth > 646 });
+	}, [state]);
 
-      setTimeLine(option, stripes);
-    }
-  };
+	const handleSetNav = option => {
+		if (state[option]) {
+			return null;
+		} else {
+			setState({
+				...state,
+				Landing: false,
+				About: false,
+				Portfolio: false,
+				Contact: false,
+				[option]: true
+			});
 
-  return (
-    <Router>
-      <Navbar handleSetNav={handleSetNav} />
-      <div className="stripes" ref={el => (stripes = el)} />
+			setTimeLine(option, stripes);
+		}
+	};
 
-      {routes.map(({ path, Component, name }) => (
-        <Route key={name} path={path} exact>
-          {({ match, history, ...props }) => (
-            <AbsoluteWrapper>
-              <CSSTransition
-                in={match != null}
-                timeout={1600}
-                classNames="page"
-                unmountOnExit
-              >
-                <div className="page h-100">
-                  <Component navState={state} handleSetNav={handleSetNav} />
-                </div>
-              </CSSTransition>
-            </AbsoluteWrapper>
-          )}
-        </Route>
-      ))}
-    </Router>
-  );
+	return (
+		<Router>
+			<Navbar handleSetNav={handleSetNav} navState={state} />
+			<div className="stripes" ref={el => (stripes = el)} />
+
+			{routes.map(({ path, Component, name }) => (
+				<Route key={name} path={path} exact>
+					{({ match, history, ...props }) => (
+						<AbsoluteWrapper>
+							<CSSTransition
+								in={match != null}
+								timeout={1600}
+								classNames="page"
+								unmountOnExit
+							>
+								<div className="page h-100">
+									<Component
+										navState={state}
+										handleSetNav={handleSetNav}
+									/>
+								</div>
+							</CSSTransition>
+						</AbsoluteWrapper>
+					)}
+				</Route>
+			))}
+		</Router>
+	);
 };
 
 export default AppRouter;
