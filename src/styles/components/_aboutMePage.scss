@@ -13,12 +13,19 @@
 }
 
 .arrow-container-about:hover {
-	cursor:pointer;
+  cursor: pointer;
 }
 
 .arrow-container-about > svg {
   opacity: 0.1;
   animation: arrow ease-in-out 0.8s infinite;
+}
+
+.paragraphs {
+  font-size: 1rem;
+  @media (min-width: 768px) {
+    font-size: 0.8rem;
+  }
 }
 
 @each $tech, $color in $icons {

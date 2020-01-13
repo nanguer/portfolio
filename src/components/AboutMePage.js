@@ -53,7 +53,7 @@ const AboutMePage = ({ navState }) => {
 					</div>
 					<div
 						className="paragraphs pt-5"
-						style={{ fontSize: "0.8rem" }}
+					
 					>
 						<p>
 							I'm a poland-based Web Developer and IT and
