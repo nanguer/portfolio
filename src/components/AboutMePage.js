@@ -8,6 +8,11 @@ import {
 	FaAngleDown
 } from "react-icons/fa";
 import { DiMongodb } from "react-icons/di";
+import {
+	GiFullMotorcycleHelmet,
+	GiBookCover,
+	GiMusicalNotes
+} from "react-icons/gi";
 import { animateScroll } from "./Animations";
 import ReduxIcon from "./ReduxIcon";
 
@@ -26,6 +31,17 @@ const AboutMePage = ({ navState }) => {
 		animateScroll(anchor);
 	};
 
+	const studiesArray = [
+		{
+			name:
+				"Higher Technician in Telecommunications and Computer Systems",
+			link:
+				"https://drive.google.com/open?id=1VXaBlpR0BM1AJtzNbigJCJZms-v7Ymqy"
+		},
+		{ name: "Audio Engineering Diploma" },
+		{ name: "Cisco CCNA Program" }
+	];
+
 	const techIcons = [
 		{ IconComponent: FaReact, name: "react" },
 		{ IconComponent: ReduxIcon, name: "redux" },
@@ -35,6 +51,55 @@ const AboutMePage = ({ navState }) => {
 		{ IconComponent: FaNodeJs, name: "node" },
 		{ IconComponent: DiMongodb, name: "mongo" }
 	];
+
+	const languages = [
+		{ language: "English", level: "Fluent" },
+		{ language: "Spanish", level: "Native" },
+		{ language: "Italian", level: "Fluent" }
+	];
+
+	const studies = studiesArray.map(({ name, link }) => {
+		return link ? (
+			<a
+				key={name}
+				style={{ zIndex: "5" }}
+				target="_blank"
+				rel="noopener noreferrer"
+				href={link}
+			>
+				<li>{name}</li>
+			</a>
+		) : (
+			<li key={name}>{name}</li>
+		);
+	});
+
+	const language = languages.map(({ language, level }) => {
+		return (
+			<li key={language}>
+				{language}
+				<span className="dot">{level}</span>
+			</li>
+		);
+	});
+
+	const interestsArray = [
+		{ id: 1, Icon: GiFullMotorcycleHelmet, text: "Motorcycles" },
+		{ id: 2, Icon: GiMusicalNotes, text: "Music and Audio Production" },
+		{ id: 3, Icon: GiBookCover, text: "Books and literature" }
+	];
+
+	const interest = interestsArray.map(({ id, Icon, text }) => {
+		return (
+			<div key={id} className="d-flex flex-column justify-content-center">
+				<div className="text-center">
+					<Icon size={isDesktop ? "3em" : "2em"} color="#fff" />
+				</div>
+				{text}
+			</div>
+		);
+	});
+
 	return (
 		<div
 			className="container
@@ -51,10 +116,7 @@ const AboutMePage = ({ navState }) => {
 							Keeping it <span className="dot">simple</span>{" "}
 						</h2>
 					</div>
-					<div
-						className="paragraphs pt-5"
-					
-					>
+					<div className="paragraphs pt-5">
 						<p>
 							I'm a poland-based Web Developer and IT and
 							Telecommunications Technician, with strong interest
@@ -88,7 +150,6 @@ const AboutMePage = ({ navState }) => {
 										key={name}
 									>
 										<IconComponent
-											isdesktop={isDesktop}
 											size={isDesktop ? "3em" : "2em"}
 											style={
 												name === "react"
@@ -111,10 +172,29 @@ const AboutMePage = ({ navState }) => {
 			</div>
 
 			<div
-				className="container about-down d-flex flex-column justify-content-between"
+				className="container about-down d-flex flex-column justify-content-center"
 				id="about-down"
 				style={{ height: "50%", marginBottom: "4rem" }}
-			></div>
+			>
+				<div className="d-flex flex-column flex-md-row">
+					<div className="studies" style={{ zIndex: "2" }}>
+						<div className="study-list">
+							<h4>Studies {"&"} more</h4>
+							<ul>{studies}</ul>
+						</div>
+						<div className="laguage-list pt-5">
+							<h5>Language Skills</h5>
+							<ul>{language}</ul>
+						</div>
+					</div>
+					<div className="interests pl-5">
+						<h4>Interests</h4>
+						<div className="d-flex flex-column flex-md-row">
+							{interest}
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
