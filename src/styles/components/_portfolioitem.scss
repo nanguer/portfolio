@@ -14,59 +14,6 @@ a.icon-link > svg {
   transition: all 0.3s ease-in-out;
 }
 
-// @mixin tooltip {
-//   font-size: 0.8rem;
-//   background-color: blueviolet;
-//   border-radius: 0.1rem;
-//   opacity: 0;
-//   color: white;
-//   //position: absolute;
-//   //top: 87%;
-//   padding: 5px;
-//   height: 25px;
-//   transition: all 0.2s ease-in-out;
-// }
-// %tooltip-styles {
-//   @include tooltip();
-// }
-
-// .tooltip-works-link {
-//   @extend%tooltip-styles;
-//   //left: 26%;
-// }
-// .tooltip-works-github {
-//   @extend%tooltip-styles;
-//   //left: 62%;
-// }
-
-// %tooltip-after-styles {
-//   content: " ";
-//   position: absolute;
-//   top: 50%;
-//   margin-top: -5px;
-//   border-width: 5px;
-//   border-style: solid;
-// }
-// .tooltip-works-github::after {
-//   @extend %tooltip-after-styles;
-//   right: 100%;
-//   border-color: transparent blueviolet transparent transparent;
-// }
-// .tooltip-works-link::after {
-//   @extend %tooltip-after-styles;
-//   left: 100%;
-//   border-color: transparent transparent transparent blueviolet;
-// }
-
-// .tooltip-text {
-//   opacity: 0;
-//   //display: inline-block;
-//   overflow: overlay;
-//   overflow-wrap: break-word;
-//   transition: opacity 0.3s ease-in;
-//   transition-delay: 0.3s;
-// }
-
 a.icon-link {
   color: $white;
   transition: color 0.2s ease;
@@ -78,27 +25,14 @@ a.icon-link {
   }
 }
 
-// .tooltip-lite {
-//   background-color: $redux;
-//   color: $white;
-//   border: 1px solid $white;
-//   border-radius: 3px;
-// }
+.shadow-mine {
+  -webkit-box-shadow: 10px 10px 44px -16px rgba(255, 255, 255, 0.19);
+  -moz-box-shadow: 10px 10px 44px -16px rgba(255, 255, 255, 0.19);
+  box-shadow: 10px 10px 44px -16px rgba(255, 255, 255, 0.19);
+}
 
 @each $tech in $icon-divs {
   .project-links__icon-div-#{$tech} {
     padding: 0 1rem;
   }
 }
-
-// @keyframes reveal-tooltip-github {
-//   to {
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes reveal-tooltip-link {
-//   to {
-//     opacity: 1;
-//   }
-// }

@@ -6,18 +6,29 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaAngleDown,
+  FaAngleUp,
   FaPhone,
   FaCode
 } from "react-icons/fa";
 
 export default () => {
-  const handleScrollDown = anchor => {
+  const handleScroll = anchor => {
     animateScroll(anchor);
   };
 
   const contacSectionIcons = [
-    { Icon: FaPhone, name: "phone", text: "+48 789397113" },
-    { Icon: MdEmail, name: "email", text: "mynew@email.com" },
+    {
+      Icon: FaPhone,
+      name: "phone",
+      text: "+48 789397113",
+      link: "tel:+48789397113"
+    },
+    {
+      Icon: MdEmail,
+      name: "email",
+      text: "Reach me by email now!",
+      link: "mailto:nngimenez1985@gmail.com"
+    },
     {
       Icon: MdLocationOn,
       name: "location",
@@ -30,9 +41,18 @@ export default () => {
   const iconSize = "3em";
 
   const socialIcons = [
-    { Icon: FaInstagram, name: "instagram" },
-    { Icon: FaLinkedinIn, name: "linkedIn" },
-    { Icon: FaGithub, name: "github" }
+    {
+      Icon: FaInstagram,
+      name: "instagram",
+      link: "https://www.instagram.com/mescalitobcn/"
+    },
+    {
+      Icon: FaLinkedinIn,
+      name: "linkedIn",
+      link:
+        "https://www.linkedin.com/in/nahuel-nicolas-gimenez-plotegher-a467b028/"
+    },
+    { Icon: FaGithub, name: "github", link: "https://github.com/nanguer" }
   ];
 
   return (
@@ -54,7 +74,7 @@ export default () => {
         </div>
         <div
           className="arrow-container d-inline-flex justify-content-end pr-md-5"
-          onClick={() => handleScrollDown("#contact-down")}
+          onClick={() => handleScroll("#contact-down")}
         >
           <FaAngleDown size="2em" />
         </div>
@@ -64,30 +84,41 @@ export default () => {
         id="contact-down"
         style={{ height: "50%" }}
       >
+        <div
+          className="arrow-up-contact justify-content-end d-inline-flex"
+          onClick={() => handleScroll("#top")}
+          style={{zIndex:"2"}}
+        >
+          <FaAngleUp size="2em" />
+        </div>
         <div className="pt-4">
           <h3 className="contact-title">Contact Info</h3>
         </div>
         <div className="contact-sections d-flex flex-wrap">
-          {contacSectionIcons.map(({ Icon, name, text }) => (
+          {contacSectionIcons.map(({ Icon, name, text, link }) => (
             <div
               key={name}
               className="col-12 col-md-6 text-center d-flex flex-column-reverse p-4"
             >
               <div style={{ padding: "1rem" }}>{text}</div>
-              <div>
-                <Icon size={iconSize} color={iconColor} />
+              <div className="contact-links" style={{ zIndex: "2" }}>
+                <a href={link}>
+                  <Icon size={iconSize} color={iconColor} />
+                </a>
               </div>
             </div>
           ))}
         </div>
         <div className="contact-social-icons d-flex justify-content-center">
-          {socialIcons.map(({ Icon, name }) => (
+          {socialIcons.map(({ Icon, name, link }) => (
             <div
               key={name}
               className="pr-2"
               style={{ zIndex: "2", cursor: "pointer" }}
             >
-              <Icon key={name} size="1.5em" color="#fff" />
+              <a target="_blank" rel="noopener noreferrer" href={link}>
+                <Icon key={name} size="1.5em" color="#fff" />
+              </a>{" "}
             </div>
           ))}
         </div>

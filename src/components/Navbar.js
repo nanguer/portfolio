@@ -67,7 +67,7 @@ export default ({ navState, handleSetNav }) => {
 
 	return (
 		<nav role="navigation">
-			<div className="menu d-flex flex-row justify-content-end pt-2">
+			<div id="top" className="menu d-flex flex-row justify-content-end pt-2">
 				<div id="menuToggle">
 					<div
 						className="checkbox-container d-flex justify-content-end flex-row"
