@@ -53,7 +53,7 @@ const Landing = ({ navState, handleSetNav }) => {
 								ref={el => (line1 = el)}
 							>
 								I build beautiful
-								<span className="dot"> web apps</span>
+								<span className="dot webapps"> web apps</span>
 							</h1>
 						</div>
 						<div className="subtitle">

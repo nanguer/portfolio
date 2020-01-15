@@ -13,6 +13,11 @@
   color: $purple;
 }
 
+.dot.webapps {
+  display: inline-block;
+  animation: webapps 9s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards infinite;
+}
+
 .social-media {
   display: none;
   flex: none;
@@ -85,5 +90,51 @@ div.singleLine {
     height: 65vh;
     width: 91vw;
     top: 7vh;
+  }
+}
+
+@keyframes webapps {
+  0% {
+    transform: none;
+    color: $purple;
+  }
+  96% {
+    transform: none;
+  }
+
+  97% {
+    transform: skew(-3deg, -5deg) scale(0.8) translateX(30px);
+    color: $sass;
+  }
+  100% {
+    transform: skew(5deg, -8deg) scale(1.5) translateX(32px);
+    color: $css3;
+  }
+}
+
+@-webkit-keyframes webapps {
+  0% {
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    color: $purple;
+  }
+  95% {
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+  }
+
+  96% {
+    transform: skew(-3deg, -5deg) scale(0.8) translateX(30px);
+    -webkit-transform: skew(-3deg, -5deg) scale(0.8) translateX(30px);
+    -ms-transform: skew(-3deg, -5deg) scale(0.8) translateX(30px);
+    color: $sass;
+  }
+  100% {
+    transform: skew(5deg, -8deg) scale(1.5) translateX(32px);
+    -webkit-transform: skew(5deg, -8deg) scale(1.5) translateX(32px);
+    -ms-transform: skew(5deg, -8deg) scale(1.5) translateX(32px);
+    color: $css3;
   }
 }

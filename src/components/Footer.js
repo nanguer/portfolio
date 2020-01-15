@@ -31,7 +31,7 @@ export const Footer = ({ navState }) => {
         className="order-1 order-md-1 order-lg-0 justify-content-start footer__contact"
         style={{ margin: "0" }}
       >
-        <div ref={el => (contactLine1 = el)}>E: nahuelgimenez@gmail.com</div>
+        <div ref={el => (contactLine1 = el)}>E: nngimenez1985@gmail.com</div>
         <div ref={el => (contactLine2 = el)} className="ml-5">
           T: (+48) 789397113
         </div>

@@ -148,7 +148,7 @@ const AboutMePage = ({ navState }) => {
 				</div>
 				<div className="about-footer d-flex flex-row justify-content-between">
 					<div className="tech-stack mb-3">
-						<div className="mb-4" style={{ fontSize: "0.8rem" }}>
+						<div className="mb-4">
 							Favourite tools and technologies
 						</div>
 						<div className="tech-icons d-flex flex-row flex-sm-nowrap flex-wrap justify-content-start">
@@ -222,7 +222,7 @@ const AboutMePage = ({ navState }) => {
 							className="text-center text-md-start pb-3"
 							style={{ fontWeight: "700" }}
 						>
-							Interests
+							Other interests...
 						</h4>
 						<div className="d-flex flex-column flex-xl-row">
 							{interest}
