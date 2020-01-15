@@ -78,16 +78,13 @@ a {
 	/* to stop flickering of text in safari */
 	transform-origin: 0% 0%;
 	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menuHamb {
 	opacity: 0;
 	top: -10px;
-	right: -5vw;
+	right: -100vw;
 	width: 90vw;
 	text-align: center;
 	@media (min-width: 768px) {
-		right: 34px;
+		right: -31vw;
 		width: unset;
 	}
 	div {

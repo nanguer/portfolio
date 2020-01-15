@@ -10,13 +10,7 @@ import {
 export default ({ navState, handleSetNav }) => {
 	const [isOpen, setOpen] = useState(false);
 	const [disableClick, setDisabled] = useState(false);
-	// const style = {
-	//   overflowX: "hidden",
-	//   position: "absolute",
-	//   width: "100vw",
-	//   height: "4rem"
-	// };
-	//const { isDesktop } = navstate;
+	const [isDesktop, setIsDesktop] = useState(navState.isDesktop);
 
 	let menu1 = useRef(null);
 	let menu1Sec = useRef(null);
@@ -35,12 +29,13 @@ export default ({ navState, handleSetNav }) => {
 	useEffect(() => {
 		timeline.current = constructAnimation(
 			[menu1, menu2, menu3, menu4],
-			[span1, span2, span3]
+			[span1, span2, span3],
+			isDesktop
 		);
 	}, []);
 
 	useEffect(() => {
-		
+		setIsDesktop(navState.isDesktop);
 	}, [navState.isDesktop]);
 
 	const toggle = booleanValue => {
@@ -67,7 +62,10 @@ export default ({ navState, handleSetNav }) => {
 
 	return (
 		<nav role="navigation">
-			<div id="top" className="menu d-flex flex-row justify-content-end pt-2">
+			<div
+				id="top"
+				className="menu d-flex flex-row justify-content-end pt-2"
+			>
 				<div id="menuToggle">
 					<div
 						className="checkbox-container d-flex justify-content-end flex-row"

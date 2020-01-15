@@ -1,46 +1,49 @@
 @import "../settings.scss";
 
 .arrow-container {
-  padding-left: 85vw;
-  &:hover {
-    cursor: pointer;
-  }
+	padding-left: 85vw;
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 h3.contact-title {
-  color: $white;
+	color: $white;
 }
 
 .contact-social-icons > div > svg {
-  transition: ease-in-out 0.3s all;
-  &:hover {
-    fill: $purple;
-  }
+	transition: ease-in-out 0.3s all;
+	&:hover {
+		fill: $purple;
+	}
 }
 
 .arrow-container > svg {
-  opacity: 0.1;
-  animation: arrow ease-in-out 0.8s infinite;
+	opacity: 0.1;
+	animation: arrow ease-in-out 0.8s infinite;
 }
 
 .arrow-up-contact {
-  color: $purple;
-  & > svg {
-    animation: arrow ease-in-out 0.8s reverse infinite;
-  }
-  @media (min-width: 768px) {
-    position: relative;
-    top: 3rem;
-  }
+	color: $purple;
+	& > svg {
+		animation: arrow ease-in-out 0.8s reverse infinite;
+	}
+	&:hover {
+		cursor: pointer;
+	}
+	@media (min-width: 768px) {
+		position: relative;
+		top: 3rem;
+	}
 }
 
 @keyframes arrow {
-  50% {
-    fill: $purple;
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(1rem);
-    opacity: 0;
-  }
+	50% {
+		fill: $purple;
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
 }

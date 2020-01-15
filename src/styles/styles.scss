@@ -11,13 +11,18 @@
 @import "./components/spinner";
 @import "./components/hamburguer";
 
+// @font-face {
+// 	font-family: "WorkSans";
+// 	src: url("/assets/fonts/WorkSans.woff2") format("woff2");
+// }
+
 @font-face {
-	font-family: "WorkSans";
-	src: url("/assets/fonts/WorkSans.woff2") format("woff2");
+	font-family: "Titilium Web";
+	src: url("../assets/TitilliumWeb.woff2") format("woff2");
 }
 
 // CUSTOM SCSS
-$font-family-sans-serif: "Worksans";
+$font-family-sans-serif: "Titilium Web", sans-serif;
 $body-bg: $bg-color;
 $body-color: $main-font-color;
 
