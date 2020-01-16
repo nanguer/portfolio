@@ -46,7 +46,7 @@ const Landing = ({ navState, handleSetNav }) => {
             <div>
               {" "}
               <h1 style={{ fontSize: "4.5rem" }} ref={el => (line1 = el)}>
-                I build <span className="beautiful">beautiful</span>
+                I build <span className="beautiful d-flex">beautiful</span>
                 <span className="dot webapps"> web apps</span>
               </h1>
             </div>
