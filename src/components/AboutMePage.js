@@ -127,7 +127,7 @@ const AboutMePage = ({ navState }) => {
 					</div>
 					<div className="paragraphs pt-md-5 pt-2">
 						<p>
-							I'm a poland-based Web Developer and IT and
+							I'm a worldwide Web Developer and IT and
 							Telecommunications Technician, with strong interest
 							for web development and networking, with special
 							care in simplicity and efficiency.
@@ -172,7 +172,7 @@ const AboutMePage = ({ navState }) => {
 						</div>
 					</div>
 					<div
-						className="arrow-container-about d-inline-flex "
+						className="arrow-container-about d-inline-md-flex "
 						onClick={() => handleScroll("#about-down")}
 					>
 						<FaAngleDown size="2em" />
@@ -186,7 +186,7 @@ const AboutMePage = ({ navState }) => {
 				style={{ height: "50%", marginBottom: "4rem" }}
 			>
 				<div
-					className="arrow-up justify-content-end d-inline-flex "
+					className="arrow-up justify-content-end d-inline-md-flex "
 					onClick={() => handleScroll("#top")}
 				>
 					<FaAngleUp size="2em" />

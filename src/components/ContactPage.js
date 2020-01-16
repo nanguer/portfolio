@@ -29,7 +29,7 @@ export default () => {
 		{
 			Icon: MdLocationOn,
 			name: "location",
-			text: "I live in Sopot, north of Poland"
+			text: "Currently in Sopot, PL. Remote working worldwide."
 		},
 		{ Icon: FaCode, name: "work", text: "Available for freelance hire" }
 	];
@@ -68,7 +68,7 @@ export default () => {
 				style={{ height: "50%" }}
 			>
 				<div
-					className="arrow-up-contact justify-content-end d-inline-flex"
+					className="arrow-up-contact justify-content-end d-inline-md-flex"
 					onClick={() => handleScroll("#top")}
 					style={{ zIndex: "2" }}
 				>
@@ -95,9 +95,10 @@ export default () => {
 						</div>
 					))}
 				</div>
-				<div className="contact-social-icons d-flex justify-content-center">
+				<div className="contact-social-icons d-flex justify-content-around justify-content-md-center pb-3 pb-md-0 ">
 					<SocialIcons style={style} />
 				</div>
+				<div></div>
 			</div>
 		</div>
 	);

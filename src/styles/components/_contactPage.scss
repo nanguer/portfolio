@@ -25,6 +25,7 @@ h3.contact-title {
 
 .arrow-up-contact {
 	color: $purple;
+	display: none;
 	& > svg {
 		animation: arrow ease-in-out 0.8s reverse infinite;
 	}
