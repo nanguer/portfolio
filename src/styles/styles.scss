@@ -1,24 +1,20 @@
 @import "./settings";
 @import "./base";
 @import "./background";
-@import "./components/navbarmenu";
+
 @import "./components/landing";
 @import "./components/contactPage";
 @import "./components/aboutMePage";
-// @import './components/portfoliopage';
+
 @import "./components/portfolioitem";
 @import "./components/footer";
 @import "./components/spinner";
 @import "./components/hamburguer";
 
-// @font-face {
-// 	font-family: "WorkSans";
-// 	src: url("/assets/fonts/WorkSans.woff2") format("woff2");
-// }
 
 @font-face {
-	font-family: "Titilium Web";
-	src: url("../assets/TitilliumWeb.woff2") format("woff2");
+  font-family: "Titilium Web";
+  src: url("../assets/TitilliumWeb.woff2") format("woff2");
 }
 
 // CUSTOM SCSS

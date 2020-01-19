@@ -58,11 +58,15 @@ const AboutMePage = ({ navState }) => {
     { language: "Italian", level: "Fluent" }
   ];
 
+  const resumeLink =
+    "https://drive.google.com/open?id=1slQl39nZTyyqDnBPJJx7Ricxt3QCoG31";
+
   const studies = studiesArray.map(({ name, link }) => {
     return link ? (
       <a
         key={name}
-        style={{ zIndex: "5", color: "#fff" }}
+        className="my-link"
+        style={{ zIndex: "5" }}
         target="_blank"
         rel="noopener noreferrer"
         href={link}
@@ -95,7 +99,7 @@ const AboutMePage = ({ navState }) => {
     return (
       <div
         key={id}
-        className="d-flex flex-column justify-content-center pt-3 pb-3 pb-xl-4 pl-xl-3 pr-xl-3"
+        className="interest-icon d-flex flex-column justify-content-center pt-3 pb-3 pb-xl-4 pl-xl-3 pr-xl-3"
       >
         <div
           className="text-center text-md-start"
@@ -200,7 +204,18 @@ const AboutMePage = ({ navState }) => {
               </h5>
               <ul className="text-center text-md-start">{language}</ul>
             </div>
+            <div className="Resume d-flex justify-content-center">
+              <a
+                className="my-link pb-5 pb-md-1 pt-5 pt-md-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={resumeLink}
+              >
+                Download a PDF version of my Resume
+              </a>
+            </div>
           </div>
+
           <div className="interests pl-md-5 pt-4 d-flex flex-column">
             <h4
               className="text-center text-md-start pb-3"

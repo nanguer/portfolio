@@ -9,6 +9,7 @@ export const constructAnimation = (menuItems, hamburguer, isDesktop) => {
   const ul = menuItems[0].childNodes[0].parentElement.offsetParent;
   const x = isDesktop ? -1 : 0;
   const y = isDesktop ? 2 : 4;
+  const ulRight = isDesktop ? "0vw" : "-7vw";
 
   const tlNavbar = gsap.timeline({ paused: true });
   tlNavbar.to(menuItems, {
@@ -20,7 +21,8 @@ export const constructAnimation = (menuItems, hamburguer, isDesktop) => {
       amount: 0.7
     }
   });
-  tlNavbar.to(ul, { opacity: 1, right: "0vw", duration: 0.2 }, 0);
+ 
+  tlNavbar.to(ul, { opacity: 1, right: ulRight, duration: 0.2 }, 0);
   tlNavbar.to(
     hamburguer[0],
     0.2,

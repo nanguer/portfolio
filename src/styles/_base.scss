@@ -1,33 +1,39 @@
 @import "./settings.scss";
 
 body {
-	font-size: 20px;
-	color: $main-font-color;
-	font-weight: 400;
-	overflow-y: overlay;
-	overflow-x: hidden;
+  font-size: 20px;
+  color: $main-font-color;
+  font-weight: 400;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 h1 {
-	font-weight: 700;
-	color: $highlight-font-color;
+  font-weight: 700;
+  color: $highlight-font-color;
 }
 
 li {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 .wrapper {
-	height: 89vh;
+  height: 89vh;
 }
 
 ul {
-	padding: 0px;
+  padding: 0px;
+}
+
+a.my-link {
+  color: $white;
+  &:hover {
+    text-decoration: none;
+    color: $purple;
+  }
 }
 
 ul a:hover {
-	text-decoration: none;
-	-webkit-animation: flip-hor 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-		both;
-	animation: flip-hor 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  -webkit-animation: flip-hor 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: flip-hor 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
