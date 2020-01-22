@@ -21,7 +21,7 @@ export const constructAnimation = (menuItems, hamburguer, isDesktop) => {
       amount: 0.7
     }
   });
- 
+
   tlNavbar.to(ul, { opacity: 1, right: ulRight, duration: 0.2 }, 0);
   tlNavbar.to(
     hamburguer[0],
@@ -98,28 +98,28 @@ export const animateMenuBack = options => {
 //Stripes background animation timeline
 export const setTimeLine = (option, target) => {
   if (option === "About") {
-    return tlStripes.to(target, {
+    return tlStripes.to(target.current, {
       x: 300,
       duration: 1,
       delay: 1,
       ease: "power3.out"
     });
   } else if (option === "Landing") {
-    return tlStripes.to(target, {
+    return tlStripes.to(target.current, {
       x: 0,
       duration: 1,
       delay: 1,
       ease: "power3.out"
     });
   } else if (option === "Portfolio") {
-    return tlStripes.to(target, {
+    return tlStripes.to(target.current, {
       x: 600,
       duration: 1,
       delay: 1,
       ease: "power3.out"
     });
   } else if (option === "Contact") {
-    return tlStripes.to(target, {
+    return tlStripes.to(target.current, {
       x: 900,
       duration: 1,
       delay: 1,

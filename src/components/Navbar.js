@@ -7,7 +7,8 @@ import {
   animateMenuBack
 } from "./Animations";
 
-export default ({ navState, handleSetNav }) => {
+
+export default ({ handleSetNav, navState }) => {
   const [isOpen, setOpen] = useState(false);
   const [disableClick, setDisabled] = useState(false);
   const [isDesktop, setIsDesktop] = useState(navState.isDesktop);
