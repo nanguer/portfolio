@@ -1,46 +1,47 @@
-import React, { createContext, useState, useRef } from "react";
-import { setTimeLine } from "../components/Animations";
+import React, { createContext, useState } from "react";
 
 const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-  const [state, setState] = useState({
-    initial: false,
-    Landing: true,
-    About: false,
-    Portfolio: false,
-    Contact: false,
-    isDesktop: window.innerWidth > 768
-  });
-  let stripes = useRef(null);
+	const [state, setState] = useState({
+		initial: false,
+		Landing: true,
+		About: false,
+		Portfolio: false,
+		Contact: false,
+		isDesktop: window.innerWidth > 768
+	});
 
-  const handleSetNav = option => {
-    if (state[option]) {
-      return null;
-    } else {
-      setState({
-        ...state,
-        Landing: false,
-        About: false,
-        Portfolio: false,
-        Contact: false,
-        [option]: true
-      });
+	const [currentOption, setCurrentOption] = useState("");
 
-      setTimeLine(option, stripes);
-    }
-  };
+	const handleSetNav = option => {
+		if (state[option]) {
+			return null;
+		} else {
+			setState({
+				...state,
+				Landing: false,
+				About: false,
+				Portfolio: false,
+				Contact: false,
+				[option]: true
+			});
+			return option;
+		}
+	};
 
-  const defaultContext = {
-    state,
-    handleSetNav
-  };
+	const defaultContext = {
+		state,
+		handleSetNav,
+		setCurrentOption,
+		currentOption
+	};
 
-  console.log(stripes);
-
-  return (
-    <AppContext.Provider value={defaultContext}>{children}</AppContext.Provider>
-  );
+	return (
+		<AppContext.Provider value={defaultContext}>
+			{children}
+		</AppContext.Provider>
+	);
 };
 
 export { AppContext, AppContextProvider };

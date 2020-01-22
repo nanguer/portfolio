@@ -1,153 +1,150 @@
 @import "./settings.scss";
 .stripes {
-  background-image: repeating-linear-gradient(
-    to right,
-    transparent,
-    transparent 217px,
-    grey 2px,
-    grey 218px
-  );
-  display: block;
-  position: fixed;
-  height: 105vh;
-  width: 400vw;
-  background-color: transparent;
-  opacity: 0.14;
-  z-index: 1;
-  overflow: hidden;
-  left: -280vw;
-  top: 0;
-  animation: stripe-animation 15s cubic-bezier(1, 0.08, 0.92, -0.06) infinite
-    forwards;
+	background-image: repeating-linear-gradient(
+		to right,
+		transparent,
+		transparent 217px,
+		grey 2px,
+		grey 218px
+	);
+	display: block;
+	position: fixed;
+	height: 105vh;
+	width: 400vw;
+	background-color: transparent;
+	opacity: 0.14;
+	z-index: 1;
+	overflow: hidden;
+	left: -280vw;
+	top: 0;
+	animation: stripe-animation 15s cubic-bezier(1, 0.08, 0.92, -0.06) infinite
+		forwards;
 }
 
 @-webkit-keyframes stripe-animation {
+	0% {
+		background-color: transparent;
 
-  0% {
-    background-color: transparent;
-
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      transparent 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-  98% {
-    transform: skewX(0deg) scaleX(0);
-    -webkit-transform: skewX(0deg) scaleX(0);
-    -ms-transform:skewX(0deg) scaleX(0);
-  }
-  99% {
-    background-color: transparent;
-    transform: skewX(6deg) scaleX(0.8);
-    -webkit-transform: skewX(-2deg) scaleX(1.2);
-    -ms-transform:skewX(6deg) scaleX(0.8);
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      transparent 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-  99.5% {
-    transform: skewX(-2deg) scaleX(1.2);
-    -webkit-transform: skewX(-2deg) scaleX(1.2);
-    -ms-transform:skewX(-2deg) scaleX(1.2);
-    background-color: rebeccapurple;
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      rgb(0, 102, 128) 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-  99.8% {
-    transform: skewX(-2deg) scaleX(1.2);
-    -webkit-transform: skewX(-2deg) scaleX(1.2);
-    -ms-transform: skewX(-2deg) scaleX(1.2);
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      purple 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-  100% {
-    -webkit-transform:skewX(10deg) scaleX(1.5);
-    -ms-transform:skewX(10deg) scaleX(1.5);
-    transform: skewX(10deg) scaleX(1.5);
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      purple 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-
-  
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			transparent 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
+	98% {
+		transform: skewX(0deg) scaleX(0);
+		-webkit-transform: skewX(0deg) scaleX(0);
+		-ms-transform: skewX(0deg) scaleX(0);
+	}
+	99% {
+		background-color: transparent;
+		transform: skewX(6deg) scaleX(0.8);
+		-webkit-transform: skewX(-2deg) scaleX(1.2);
+		-ms-transform: skewX(6deg) scaleX(0.8);
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			transparent 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
+	99.5% {
+		transform: skewX(-2deg) scaleX(1.2);
+		-webkit-transform: skewX(-2deg) scaleX(1.2);
+		-ms-transform: skewX(-2deg) scaleX(1.2);
+		background-color: rebeccapurple;
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			rgb(0, 102, 128) 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
+	99.8% {
+		transform: skewX(-2deg) scaleX(1.2);
+		-webkit-transform: skewX(-2deg) scaleX(1.2);
+		-ms-transform: skewX(-2deg) scaleX(1.2);
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			purple 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
+	100% {
+		-webkit-transform: skewX(10deg) scaleX(1.5);
+		-ms-transform: skewX(10deg) scaleX(1.5);
+		transform: skewX(10deg) scaleX(1.5);
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			purple 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
 }
 
 @keyframes stripe-animation {
-  0% {
-    background-color: transparent;
+	0% {
+		background-color: transparent;
 
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      transparent 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-  98% {
-    transform: skewX(0deg) scaleX(0);
-  }
-  99% {
-    background-color: transparent;
-    transform: skewX(6deg) scaleX(0.8);
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      transparent 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-  99.5% {
-    transform: skewX(-2deg) scaleX(1.2);
-    background-color: rebeccapurple;
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      rgb(0, 102, 128) 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-  99.8% {
-    transform: skewX(-2deg) scaleX(1.2);
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      purple 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
-  100% {
-    transform: skewX(10deg) scaleX(1.5);
-    background-image: repeating-linear-gradient(
-      to right,
-      transparent,
-      purple 217px,
-      grey 2px,
-      grey 218px
-    );
-  }
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			transparent 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
+	98% {
+		transform: skewX(0deg) scaleX(0);
+	}
+	99% {
+		background-color: transparent;
+		transform: skewX(6deg) scaleX(0.8);
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			transparent 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
+	99.5% {
+		transform: skewX(-2deg) scaleX(1.2);
+		background-color: rebeccapurple;
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			rgb(0, 102, 128) 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
+	99.8% {
+		transform: skewX(-2deg) scaleX(1.2);
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			purple 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
+	100% {
+		transform: skewX(10deg) scaleX(1.5);
+		background-image: repeating-linear-gradient(
+			to right,
+			transparent,
+			purple 217px,
+			grey 2px,
+			grey 218px
+		);
+	}
 }
