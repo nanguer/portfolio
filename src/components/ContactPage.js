@@ -6,14 +6,15 @@ import { FaAngleDown, FaAngleUp, FaPhone, FaCode } from "react-icons/fa";
 import {AppContext} from "../context/AppContext";
 
 export default () => {
+	const {setCurrentOption} = useContext(AppContext);
 	
 	useEffect(() => {
 		return () => {
 			setCurrentOption("");
 		};
-	}, []);
+	}, [setCurrentOption]);
 
-	const {setCurrentOption} = useContext(AppContext);
+	
 
 	const handleScroll = anchor => {
 		animateScroll(anchor);
