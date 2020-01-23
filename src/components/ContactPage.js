@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { animateScroll } from "./Animations";
 import SocialIcons from "./SocialIcons";
 import { MdEmail, MdLocationOn } from "react-icons/md";
 import { FaAngleDown, FaAngleUp, FaPhone, FaCode } from "react-icons/fa";
+import {AppContext} from "../context/AppContext";
 
 export default () => {
+	const {setCurrentOption} = useContext(AppContext);
+	
+	useEffect(() => {
+		return () => {
+			setCurrentOption("");
+		};
+	}, [setCurrentOption]);
+
+	
+
 	const handleScroll = anchor => {
 		animateScroll(anchor);
 	};

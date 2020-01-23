@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import {
   FaReact,
   FaNodeJs,
@@ -16,11 +16,19 @@ import {
 } from "react-icons/gi";
 import { animateScroll } from "./Animations";
 import ReduxIcon from "./ReduxIcon";
+import { AppContext } from "../context/AppContext";
 
 const AboutMePage = ({ navState }) => {
+  const { setCurrentOption } = useContext(AppContext);
+  useEffect(() => {
+    return () => {
+      setCurrentOption("");
+    };
+  }, [setCurrentOption]);
+
   const { isDesktop } = navState;
   const iconStyle = {
-    margin: "0px 7px",
+    margin: "auto",
     minWidth: "3em"
   };
   const iconStyleReact = {

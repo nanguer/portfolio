@@ -21,7 +21,7 @@ export const constructAnimation = (menuItems, hamburguer, isDesktop) => {
       amount: 0.7
     }
   });
- 
+
   tlNavbar.to(ul, { opacity: 1, right: ulRight, duration: 0.2 }, 0);
   tlNavbar.to(
     hamburguer[0],
@@ -102,28 +102,32 @@ export const setTimeLine = (option, target) => {
       x: 300,
       duration: 1,
       delay: 1,
-      ease: "power3.out"
+      ease: "power3.out",
+      clearProps: "transform"
     });
   } else if (option === "Landing") {
     return tlStripes.to(target, {
       x: 0,
       duration: 1,
       delay: 1,
-      ease: "power3.out"
+      ease: "power3.out",
+      clearProps: "transform"
     });
   } else if (option === "Portfolio") {
     return tlStripes.to(target, {
       x: 600,
       duration: 1,
       delay: 1,
-      ease: "power3.out"
+      ease: "power3.out",
+      clearProps: "transform"
     });
   } else if (option === "Contact") {
     return tlStripes.to(target, {
       x: 900,
       duration: 1,
       delay: 1,
-      ease: "power3.out"
+      ease: "power3.out",
+      clearProps: "transform"
     });
   }
   return;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import {
   handleEnterTitle,
   handleExitTitle,
@@ -9,13 +9,23 @@ import {
 import { Footer } from "./Footer";
 import SocialIcons from "./SocialIcons";
 import { withRouter } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
 
-const Landing = ({ navState, handleSetNav }) => {
+const Landing = ({ navState }) => {
   let line1 = useRef(null);
   let line2 = useRef(null);
   let line3 = useRef(null);
   let picture = useRef(null);
   let cover = useRef(null);
+  const { setCurrentOption } = useContext(AppContext);
+
+  useEffect(() => {
+    return () => {
+      setCurrentOption("");
+    };
+  }, [setCurrentOption]);
+
+
 
   useEffect(() => {
     if (navState.Landing) {
