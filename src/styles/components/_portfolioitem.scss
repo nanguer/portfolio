@@ -1,4 +1,4 @@
-@import "../settings.scss";
+@import '../settings.scss';
 
 .portfolio-item {
   max-width: min-content;
@@ -23,6 +23,10 @@ a.icon-link {
   &:hover svg {
     transform: scale(1.2);
   }
+}
+
+a.withLink:hover {
+  text-decoration: none;
 }
 
 .shadow-mine {

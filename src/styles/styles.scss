@@ -1,25 +1,25 @@
-@import "./settings";
-@import "./base";
-@import "./background";
+@import './settings';
+@import './base';
+@import './background';
 
-@import "./components/landing";
-@import "./components/contactPage";
-@import "./components/aboutMePage";
+@import './components/landing';
+@import './components/contactPage';
+@import './components/aboutMePage';
 
-@import "./components/portfolioitem";
-@import "./components/footer";
-@import "./components/spinner";
-@import "./components/hamburguer";
-
+@import './components/portfolioitem';
+@import './components/footer';
+@import './components/spinner';
+@import './components/hamburguer';
+@import './components/contactForm';
 
 @font-face {
-  font-family: "Titilium Web";
-  src: url("../assets/TitilliumWeb.woff2") format("woff2");
+  font-family: 'Titilium Web';
+  src: url('../assets/TitilliumWeb.woff2') format('woff2');
 }
 
 // CUSTOM SCSS
-$font-family-sans-serif: "Titilium Web", sans-serif;
+$font-family-sans-serif: 'Titilium Web', sans-serif;
 $body-bg: $bg-color;
 $body-color: $main-font-color;
 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
