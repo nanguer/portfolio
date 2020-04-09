@@ -12,14 +12,20 @@
 @import './components/hamburguer';
 @import './components/contactForm';
 
+@import '../../node_modules//bootstrap/scss/functions';
+@import '../../node_modules//bootstrap/scss/variables';
+
 @font-face {
   font-family: 'Titilium Web';
   src: url('../assets/TitilliumWeb.woff2') format('woff2');
 }
 
 // CUSTOM SCSS
-$font-family-sans-serif: 'Titilium Web', sans-serif;
+$font-family-base: 'Titilium Web', sans-serif;
 $body-bg: $bg-color;
 $body-color: $main-font-color;
+$theme-colors: (
+  primary: $purple,
+);
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';

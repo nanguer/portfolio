@@ -77,22 +77,26 @@ export default () => {
         <div className='pt-4'>
           <h3 className='contact-title'>Contact Info</h3>
         </div>
-        <div className='contact-sections d-flex flex-wrap'>
-          {contacSectionIcons.map(({ Icon, name, text, link }) => (
-            <div
-              key={name}
-              className='col-12 col-md-6 text-center d-flex flex-column-reverse p-4'
-            >
-              <div style={{ padding: '1rem' }}>{text}</div>
-              <div className='contact-links' style={{ zIndex: '2' }}>
-                <a href={link}>
-                  <Icon size={iconSize} color={iconColor} />
-                </a>
+        <div className='contact-sections d-flex flex-column flex-md-row flex-wrap justify-content-around'>
+          <div className='contact-sections-group col-md-6 d-flex flex-column flex-md-row flex-wrap align-content-around mb-5'>
+            {contacSectionIcons.map(({ Icon, name, text, link }) => (
+              <div
+                key={name}
+                className='section-group col-md-4 align-self-center text-center align-middle d-flex flex-column-reverse p-2'
+              >
+                <div style={{ padding: '0.25rem' }}>{text}</div>
+                <div className='contact-links' style={{ zIndex: '2' }}>
+                  <a href={link}>
+                    <Icon size={iconSize} color={iconColor} />
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <ContactForm />
         </div>
-        <ContactForm />
+
         <div className='contact-social-icons d-flex justify-content-around justify-content-md-center pb-3 pb-md-0 '>
           <SocialIcons style={style} />
         </div>
