@@ -80,6 +80,25 @@ const AppRouter = () => {
     }
   };
 
+  const routesComponents = routes.map(({ path, Component, name }) => (
+    <Route key={name} path={path} exact>
+      {({ match, history, ...props }) => (
+        <AbsoluteWrapper>
+          <CSSTransition
+            in={match != null}
+            timeout={1600}
+            classNames='page'
+            unmountOnExit
+          >
+            <div className='page h-100'>
+              <Component navState={state} handleSetNav={handleSetNav} />
+            </div>
+          </CSSTransition>
+        </AbsoluteWrapper>
+      )}
+    </Route>
+  ));
+
   return (
     <Router>
       <Navbar handleSetNav={handleSetNav} navState={state} />
@@ -91,24 +110,7 @@ const AppRouter = () => {
         style={{ position: 'fixed' }}
       />
 
-      {routes.map(({ path, Component, name }) => (
-        <Route key={name} path={path} exact>
-          {({ match, history, ...props }) => (
-            <AbsoluteWrapper>
-              <CSSTransition
-                in={match != null}
-                timeout={1600}
-                classNames='page'
-                unmountOnExit
-              >
-                <div className='page h-100'>
-                  <Component navState={state} handleSetNav={handleSetNav} />
-                </div>
-              </CSSTransition>
-            </AbsoluteWrapper>
-          )}
-        </Route>
-      ))}
+      {routesComponents}
     </Router>
   );
 };
