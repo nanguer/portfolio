@@ -1,4 +1,4 @@
-@import "./settings.scss";
+@import './settings.scss';
 
 body {
   font-size: 20px;
@@ -36,4 +36,10 @@ a.my-link {
 ul a:hover {
   -webkit-animation: flip-hor 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   animation: flip-hor 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+div#root {
+  canvas {
+    position: fixed;
+  }
 }

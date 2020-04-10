@@ -26,6 +26,13 @@ $body-bg: $bg-color;
 $body-color: $main-font-color;
 $theme-colors: (
   primary: $purple,
+  secondary: darken($sass, 20%),
 );
+
+//FORM
+$input-focus-bg: transparent;
+$input-focus-border-color: $purple;
+$input-focus-box-shadow: none;
+$input-focus-color: $grey;
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';

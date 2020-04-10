@@ -16,5 +16,35 @@ textarea.form-control {
   div.error {
     position: absolute;
     color: $html5;
+    font-size: 0.9rem;
   }
+  input,
+  textarea {
+    color: $grey;
+    border: 1px solid;
+    background-color: transparent;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid;
+  }
+  &:focus {
+    color: $grey;
+    background-color: transparent;
+    border-color: unset;
+    outline: 0;
+    box-shadow: unset;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus {
+  border: none;
+  border-bottom: 1px solid $grey;
+  -webkit-text-fill-color: $white;
+  background-color: transparent;
+  transition: background-color 5000s ease-in-out 0s;
 }

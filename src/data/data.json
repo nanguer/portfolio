@@ -8,6 +8,14 @@
     "github": "https://github.com/nanguer/hackathon-app"
   },
   {
+    "id": 6,
+    "title": "ITBars",
+    "description": "Protein bars food company website, developed with Gatsby, powered by GraphQL and deployed to Netlify",
+    "img": "/assets/Images/ITBars.png",
+    "link": "https://itbars.es",
+    "github": "https://github.com/nanguer/itbars"
+  },
+  {
     "id": 5,
     "title": "Expensify",
     "description": "Application designed to help you keep control on personal expenses. React, Redux, Firebase.",
