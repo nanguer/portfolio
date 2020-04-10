@@ -1,17 +1,26 @@
-import React, { useState, useEffect } from "react";
-import ItemLoader from "../loaders/ItemLoader";
-import data from "../../data/data.json";
+import React, { useState, useEffect, useContext } from 'react';
+import ItemLoader from '../loaders/ItemLoader';
+import data from '../../data/data.json';
+
+import { AppContext } from '../../context/AppContext';
 
 const PortfolioPage = () => {
   const [works, setWorks] = useState([]);
+  const { setCurrentOption } = useContext(AppContext);
 
   useEffect(() => {
-    setWorks(works => works.concat(data));
+    return () => {
+      setCurrentOption('');
+    };
+  }, [setCurrentOption]);
+
+  useEffect(() => {
+    setWorks((works) => works.concat(data));
   }, []);
 
   return (
-    <div className="portfolio-list d-flex flex-wrap justify-content-around align-items-start">
-      {works.map(work => (
+    <div className='portfolio-list d-flex flex-wrap justify-content-around align-items-start'>
+      {works.map((work) => (
         <ItemLoader key={work.id} work={work} />
       ))}
     </div>
