@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 
 const ContactForm = () => {
   const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -26,6 +27,7 @@ const ContactForm = () => {
         .required('Required!'),
     }),
     onSubmit: (values) => {
+      setIsSubmitting(true);
       sendEmail(values);
     },
   });
@@ -40,6 +42,7 @@ const ContactForm = () => {
         if (res.status === 200) {
           alert('Message sent! Thank you');
           formik.handleReset();
+
           //save to db
           db.collection('emails').add({
             name: values.name,
@@ -56,6 +59,7 @@ const ContactForm = () => {
         );
       }
       setError('');
+      setIsSubmitting(false);
     };
     asyncSendEmail();
   };
@@ -107,8 +111,12 @@ const ContactForm = () => {
           ) : null}
         </div>
         <div className='form-group text-center'>
-          <button type='submit' className=' btn btn-primary'>
-            Submit
+          <button
+            disabled={isSubmitting}
+            type='submit'
+            className=' btn btn-primary'
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
         </div>
       </form>

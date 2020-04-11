@@ -11,6 +11,7 @@
 @import './components/spinner';
 @import './components/hamburguer';
 @import './components/contactForm';
+@import './components/contactModal';
 
 @import '../../node_modules//bootstrap/scss/functions';
 @import '../../node_modules//bootstrap/scss/variables';
@@ -34,5 +35,6 @@ $input-focus-bg: transparent;
 $input-focus-border-color: $purple;
 $input-focus-box-shadow: none;
 $input-focus-color: $grey;
+$input-border-radius: unset;
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
