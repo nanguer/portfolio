@@ -3,33 +3,29 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
-const ContactModal = () => {
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  function openModal() {
-    setIsOpen(true);
-  }
-
+const ContactModal = ({
+  modalTitle,
+  modalMessage,
+  setModalTitle,
+  setModalMessage,
+}) => {
   function closeModal() {
-    setIsOpen(false);
+    setModalTitle('');
+    setModalMessage('');
   }
 
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={modalTitle !== ''}
         onRequestClose={closeModal}
         className='Modal'
         overlayClassName='Overlay'
         contentLabel='Contact Modal'
       >
-        <h2>Message sent!</h2>
+        <h2>{modalTitle}!</h2>
 
-        <div>
-          Thank you! Your message was received. I'll get back to you as soon as
-          possible.
-        </div>
+        <div>{modalMessage}</div>
         <div className='text-center'>
           <button className='btn btn-primary mt-3' onClick={closeModal}>
             close

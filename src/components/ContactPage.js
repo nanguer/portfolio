@@ -5,7 +5,6 @@ import { MdEmail, MdLocationOn } from 'react-icons/md';
 import { FaAngleDown, FaAngleUp, FaPhone, FaCode } from 'react-icons/fa';
 import { AppContext } from '../context/AppContext';
 import ContactForm from './ContactForm';
-import ContactModal from './ContactModal';
 
 export default () => {
   const { setCurrentOption } = useContext(AppContext);
@@ -104,7 +103,6 @@ export default () => {
           </div>
 
           <ContactForm />
-          <ContactModal />
         </div>
 
         <div className='contact-social-icons d-flex justify-content-around justify-content-md-center pb-3 pb-md-0 '>
