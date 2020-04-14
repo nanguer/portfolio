@@ -1,13 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  animateMenu,
+  animateTl,
   constructAnimation,
   animateMenuOption,
   animateMenuBack,
 } from './Animations';
 
-export default ({ navState, handleSetNav }) => {
+import { AppContext } from '../context/AppContext';
+
+export default () => {
+  const { handleSetNav, state: navState, setCurrentOption } = useContext(
+    AppContext
+  );
+
   const [isOpen, setOpen] = useState(false);
   const [disableClick, setDisabled] = useState(false);
   const [isDesktop, setIsDesktop] = useState(navState.isDesktop);
@@ -32,14 +38,14 @@ export default ({ navState, handleSetNav }) => {
       [span1, span2, span3],
       isDesktop
     );
-  }, []);
+  }, [isDesktop]);
 
   useEffect(() => {
     setIsDesktop(navState.isDesktop);
   }, [navState.isDesktop]);
 
   const toggle = (booleanValue) => {
-    animateMenu(timeline, booleanValue);
+    animateTl(timeline, booleanValue);
     setDisabled(true);
     setTimeout(() => {
       setDisabled(false);
@@ -48,6 +54,7 @@ export default ({ navState, handleSetNav }) => {
   };
 
   const handleNavClick = (option, booleanValue) => {
+    setCurrentOption(option);
     handleSetNav(option);
     toggle(booleanValue);
   };

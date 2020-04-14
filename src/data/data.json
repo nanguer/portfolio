@@ -60,7 +60,7 @@
   {
     "id": 8,
     "title": "This Web",
-    "description": "This website was also developed with ",
+    "description": "React hooks, Context and GSAP animation. Google Firestore/FIrebase runnig in backend. This website was also developed with ",
     "img": "",
     "link": "",
     "github": "https://github.com/nanguer/portfolio"

@@ -1,37 +1,57 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import {
   handleEnterTitle,
   handleExitTitle,
   enterPicture,
   exitPicture,
   setOpacity,
+  buttonsTimeline,
+  animateTl,
 } from '../components/Animations';
 import { Footer } from './Footer';
 import SocialIcons from './SocialIcons';
 import { withRouter, Link } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 
-const Landing = ({ navState, handleSetNav }) => {
+const Landing = ({ navState }) => {
   let line1 = useRef(null);
   let line2 = useRef(null);
   let line3 = useRef(null);
   let picture = useRef(null);
   let cover = useRef(null);
+  let button1 = useRef(null);
+  let button2 = useRef(null);
+  let timelineButton = useRef(null);
+
+  const { setCurrentOption, handleSetNav } = useContext(AppContext);
+
+  useEffect(() => {
+    return () => {
+      setCurrentOption('');
+    };
+  }, [setCurrentOption]);
+
+  useEffect(() => {
+    timelineButton.current = buttonsTimeline([button1, button2]);
+  }, []);
 
   useEffect(() => {
     if (navState.Landing) {
       handleEnterTitle([line1, line2, line3]);
       enterPicture(picture);
+      animateTl(timelineButton, false);
       setOpacity(cover);
     }
     if (!navState.Landing) {
       handleExitTitle([line3, line2, line1]);
       exitPicture(picture);
     }
-    console.log(navState);
   }, [navState.Landing]);
 
-  const handleButtonClick = (option) => console.log(handleSetNav);
-
+  const handleButtonClick = (option) => {
+    animateTl(timelineButton, true);
+    return handleSetNav(option);
+  };
   const style = {
     margin: '7px 0px',
     color: '#9c9c9c',
@@ -67,10 +87,20 @@ const Landing = ({ navState, handleSetNav }) => {
                 onClick={() => handleButtonClick('Portfolio')}
               >
                 {' '}
-                <button className='btn btn-primary'>View Work</button>
+                <button
+                  ref={(el) => (button1 = el)}
+                  className='btn btn-primary'
+                >
+                  View Work
+                </button>
               </Link>
               <Link to='/contact' onClick={() => handleButtonClick('Contact')}>
-                <button className='btn btn-secondary'>Contact now!</button>
+                <button
+                  ref={(el) => (button2 = el)}
+                  className='btn btn-secondary'
+                >
+                  Contact now!
+                </button>
               </Link>
             </div>
           </div>
@@ -81,9 +111,9 @@ const Landing = ({ navState, handleSetNav }) => {
           ref={(el) => (line3 = el)}
           style={{ zIndex: '2' }}
         >
-          <div className='d-flex align-items-center flex-column justify-content-end'>
+          <div className='si-container d-flex align-items-center flex-column justify-content-end'>
             <div className='follow text-nowrap mb-sm-4'>Follow Me</div>
-            <div className='singleLine mt-sm-5'>
+            <div id='singleLine' className='singleLine mt-sm-5'>
               <svg
                 viewBox='0 0 80 20'
                 style={{
