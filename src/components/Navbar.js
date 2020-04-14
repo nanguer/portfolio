@@ -38,7 +38,7 @@ export default () => {
       [span1, span2, span3],
       isDesktop
     );
-  }, []);
+  }, [isDesktop]);
 
   useEffect(() => {
     setIsDesktop(navState.isDesktop);

@@ -111,9 +111,9 @@ const Landing = ({ navState }) => {
           ref={(el) => (line3 = el)}
           style={{ zIndex: '2' }}
         >
-          <div className='d-flex align-items-center flex-column justify-content-end'>
+          <div className='si-container d-flex align-items-center flex-column justify-content-end'>
             <div className='follow text-nowrap mb-sm-4'>Follow Me</div>
-            <div className='singleLine mt-sm-5'>
+            <div id='singleLine' className='singleLine mt-sm-5'>
               <svg
                 viewBox='0 0 80 20'
                 style={{

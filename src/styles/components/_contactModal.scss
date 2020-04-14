@@ -16,6 +16,9 @@
   h2 {
     color: $white;
   }
+  @media (min-width: 768px) {
+    max-width: 350px;
+  }
 }
 
 .Overlay {

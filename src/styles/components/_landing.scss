@@ -50,9 +50,30 @@
   }
 }
 
-div.follow,
-div.singleLine {
+.singleLine {
+  transform: translate(0px, -90px) rotate(90deg);
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+
+div.follow {
   transform: rotate(90deg);
+  cursor: default;
+}
+
+.si a svg {
+  transition: all 0.2s ease-in-out;
+}
+
+.si {
+  display: none;
+  opacity: 0;
+  transform: translateY(-60px);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.4s;
+  &:hover a svg {
+    fill: $purple;
+  }
 }
 
 @mixin meBg {
@@ -105,7 +126,34 @@ div.singleLine {
   margin-top: 1rem;
   button {
     margin: 0rem 1rem 1rem;
+    width: -webkit-fill-available;
+    @media (min-width: 768px) {
+      width: unset;
+    }
   }
+}
+
+.follow:hover ~ #singleLine,
+.si-container:hover #singleLine,
+#singleLine:hover {
+  transform: translate(0px, 0px) rotate(90deg);
+  opacity: 1;
+}
+.follow:hover ~ .icons-sm,
+.si-container:hover .icons-sm,
+#singleLine:hover ~ .icons-sm {
+  .si {
+    transform: translateY(0px);
+    opacity: 1;
+    display: flex;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.si:hover {
+  transform: translateY(0px);
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
 }
 
 @keyframes webapps {
