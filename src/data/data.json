@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Hackathon Management App",
-    "description": "Complete fullstack MERN stack application designed for events management. ",
+    "description": "Complete fullstack MERN stack application designed for events management. React, Redux, JWT Authentication, Nodejs, Mongo DB ",
     "img": "/assets/Images/hackathonManag.png",
     "link": "https://hackathon-management.herokuapp.com/",
     "github": "https://github.com/nanguer/hackathon-app"
@@ -10,7 +10,7 @@
   {
     "id": 6,
     "title": "ITBars",
-    "description": "Protein bars food company website, developed with Gatsby, powered by GraphQL and deployed to Netlify",
+    "description": "Protein bars food company website, Contentfull headless CMS, developed with Gatsby, powered by GraphQL, GSAP animations and deployed to Netlify",
     "img": "/assets/Images/ITBars.png",
     "link": "https://itbars.es",
     "github": "https://github.com/nanguer/itbars"
@@ -18,7 +18,7 @@
   {
     "id": 5,
     "title": "Expensify",
-    "description": "Application designed to help you keep control on personal expenses. React, Redux, Firebase.",
+    "description": "Application designed to help you keep control on personal expenses. React, Redux, Firebase, Authentication",
     "img": "/assets/Images/expensify.png",
     "link": "https://nng-expensify.herokuapp.com/",
     "github": "https://github.com/nanguer/react-course-expensify-app"
@@ -43,7 +43,7 @@
   {
     "id": 3,
     "title": "Personal Blog App",
-    "description": "Minimalistic Blog application with basic CRUD operations functionality",
+    "description": "Minimalistic Blog application with basic CRUD operations functionality. Nodejs, Express, MongoDB, Ejs templating engine",
     "img": "/assets/Images/BlogApp.png",
     "link": "https://immense-sierra-46416.herokuapp.com/",
     "github": "https://github.com/nanguer/BlogApp"

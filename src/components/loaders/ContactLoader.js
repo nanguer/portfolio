@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import {Spinner} from "../Spinner";
 
-const ContactPage = React.lazy(() => import("../ContactPage"));
+const ContactPage = React.lazy(() => import("../Contact"));
 
 const ContactLoader = ({ navState }) => (
   <div>
