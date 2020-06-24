@@ -69,6 +69,10 @@
   color: $grey;
 }
 
+.school {
+  color: $purple;
+}
+
 // .interest-icon:hover {
 //   div > svg {
 //     color: $purple;
@@ -77,6 +81,7 @@
 
 @media (min-width: 992px) {
   .icon-container {
+    text-align: center;
     margin: 0.5rem 1.5rem 0.5rem 0.5rem;
   }
 }

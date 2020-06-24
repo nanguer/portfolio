@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Axios, db } from '../firebase/firebaseConfig';
+import { Axios, db } from '../../firebase/firebaseConfig';
 import { useFormik } from 'formik';
 import ContactModal from './ContactModal';
 import * as Yup from 'yup';
