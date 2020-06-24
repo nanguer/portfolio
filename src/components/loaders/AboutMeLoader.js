@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import {Spinner} from "../Spinner";
 
-const AboutMePage = React.lazy(() => import("../AboutMePage"));
+const AboutMePage = React.lazy(() => import("../AboutMe"));
 
 const AboutMeLoader = ({ navState }) => (
   <>

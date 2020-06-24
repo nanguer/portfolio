@@ -9,7 +9,7 @@ import {
   animateTl,
 } from '../components/Animations';
 import { Footer } from './Footer';
-import SocialIcons from './SocialIcons';
+import SocialIcons from './Contact/SocialIcons';
 import { withRouter, Link } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 
