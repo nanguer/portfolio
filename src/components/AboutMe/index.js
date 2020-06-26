@@ -65,6 +65,7 @@ const AboutMePage = ({ navState }) => {
               creative projects that can affect people in positive ways.
             </p>
           </div>
+          <div className="about-photo"></div>
         </div>
         <div className='about-footer d-flex flex-row justify-content-between'>
           <div className='tech-stack mb-3'>
